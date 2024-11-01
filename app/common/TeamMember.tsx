@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
-interface TeamMemberProps {
+export interface TeamMemberProps {
   name: string;
   role: string;
   program: string;
