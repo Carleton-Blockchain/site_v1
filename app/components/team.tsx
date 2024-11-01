@@ -2,8 +2,7 @@ import Image from "next/image";
 import { FaLinkedin } from "react-icons/fa";
 import SocialIcon from '../common/SocialIcon';
 import { teamMembers } from '../common/Data';
-import TeamMember from '../common/TeamMember';
-import { TeamMemberProps } from '../common/TeamMember';
+
 
 export default function MeetTheTeam() {
     return(

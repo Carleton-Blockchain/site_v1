@@ -1,4 +1,4 @@
-import { FaLinkedin, FaTwitter, FaInstagram, FaDiscord } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaDiscord } from 'react-icons/fa';
 
 export const socialLinks = [
     {
@@ -44,7 +44,7 @@ export const socialLinks = [
       year: '4th Year',
       image: '/pfp/eshan.png',
       linkedin: 'https://www.linkedin.com/in/eshan-betrabet/',
-      email: 'john@example.com'
+      email: 'https://x.com/eshanbetrabet'
     },
     {
       name: 'Cedric Osagie',
@@ -53,7 +53,7 @@ export const socialLinks = [
       year: 'Alumni',
       image: '/pfp/cedric.png',
       linkedin: 'https://www.linkedin.com/in/cedric-osagie/',
-      email: 'jane@example.com'
+      email: 'https://x.com/CedricOsagie'
     },
   ];
 
