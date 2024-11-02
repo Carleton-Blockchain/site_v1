@@ -13,6 +13,8 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const baseUrl ='https://www.carletonblockchain.com';
+
 export const metadata: Metadata = {
   title: "Carleton Blockchain",
   description: "Carleton's fastest growing student led blockchain organization!",
@@ -29,15 +31,24 @@ export const metadata: Metadata = {
     description: "Carleton's fastest growing student led blockchain organization!",
     url: "https://www.carletonblockchain.com",
     type: "website",
+    siteName: "Carleton Blockchain",
     images: [
       {
-        url: "/cubanner.png",
+        url: "https://www.carletonblockchain.com/cubanner.png",
         width: 1200,
         height: 630,
         alt: "Carleton Blockchain",
+        type: "image/png",
       },
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Carleton Blockchain",
+    description: "Carleton's fastest growing student led blockchain organization!",
+    images: ["https://www.carletonblockchain.com/cubanner.png"],
+  },
+  themeColor: "#B8C6E5",
 };
 
 
