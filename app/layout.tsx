@@ -16,34 +16,30 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Carleton Blockchain",
   description: "Carleton's fastest growing student led blockchain organization!",
+  icons: [
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      url: "/cublockchain1.png",
+    },
+  ],
   openGraph: {
     title: "Carleton Blockchain",
     description: "Carleton's fastest growing student led blockchain organization!",
-    url: 'https://www.carletonblockchain.com',
-    siteName: 'Carleton Blockchain',
+    url: "https://www.carletonblockchain.com",
+    type: "website",
     images: [
       {
-        url: '/cubanner.png',  //(1200x630 recommended)
+        url: "www.carletonblockchain.com/cubanner.png",
         width: 1200,
         height: 630,
-        alt: 'Carleton Blockchain',
+        alt: "Carleton Blockchain",
       },
     ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  icons: {
-    icon: {
-      url: '/cublockchain1.png',
-      sizes: '200x200',
-    },
-    shortcut: '/cublockchain1.png',
-    apple: {
-      url: '/cublockchain1.png',
-      sizes: '200x200',
-    },
   },
 };
+
 
 export default function RootLayout({
   children,
