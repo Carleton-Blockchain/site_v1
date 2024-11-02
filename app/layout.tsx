@@ -21,7 +21,7 @@ export const metadata: Metadata = {
       rel: "icon",
       type: "image/png",
       sizes: "32x32",
-      url: "/cublockchain1.png",
+      url: "/cublockchain1.ico",
     },
   ],
   openGraph: {
