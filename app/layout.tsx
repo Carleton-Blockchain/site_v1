@@ -16,6 +16,22 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Carleton Blockchain",
   description: "Carleton's fastest growing student led blockchain organization!",
+  openGraph: {
+    title: "Carleton Blockchain",
+    description: "Carleton's fastest growing student led blockchain organization!",
+    url: 'https://www.carletonblockchain.com',
+    siteName: 'Carleton Blockchain',
+    images: [
+      {
+        url: '/cubanner.png',  //(1200x630 recommended)
+        width: 1200,
+        height: 630,
+        alt: 'Carleton Blockchain',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
   icons: {
     icon: {
       url: '/cublockchain1.png',

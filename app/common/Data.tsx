@@ -32,19 +32,21 @@ export const socialLinks = [
       name: 'Rodney Shen',
       role: 'Co-Founder',
       program: 'Computer Science',
-      year: '3th Year',
+      year: '3rd Year',
       image: '/pfp/pfp.png',
       linkedin: 'https://www.linkedin.com/in/rodneyshenn/',
-      email: 'alex@example.com'
+      x: 'https://x.com/992rodney',
+      website: 'https://www.rodneyshenn.com'
     },
     {
       name: 'Eshan Betrabet',
       role: 'Co-Founder',
       program: 'Cognitive Science',
-      year: '4th Year',
+      year: '3rd Year',
       image: '/pfp/eshan.png',
       linkedin: 'https://www.linkedin.com/in/eshan-betrabet/',
-      email: 'https://x.com/eshanbetrabet'
+      x: 'https://x.com/eshanbetrabet',
+      website: 'https://eshanb.com'
     },
     {
       name: 'Cedric Osagie',
@@ -53,7 +55,7 @@ export const socialLinks = [
       year: 'Alumni',
       image: '/pfp/cedric.png',
       linkedin: 'https://www.linkedin.com/in/cedric-osagie/',
-      email: 'https://x.com/CedricOsagie'
+      x: 'https://x.com/CedricOsagie'
     },
   ];
 
