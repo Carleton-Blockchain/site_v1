@@ -13,8 +13,6 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-const baseUrl ='https://www.carletonblockchain.com';
-
 export const metadata: Metadata = {
   title: "Carleton Blockchain",
   description: "Carleton's fastest growing student led blockchain organization!",
