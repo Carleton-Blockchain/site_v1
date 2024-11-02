@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "www.carletonblockchain.com/cubanner.png",
+        url: "/cubanner.png",
         width: 1200,
         height: 630,
         alt: "Carleton Blockchain",
