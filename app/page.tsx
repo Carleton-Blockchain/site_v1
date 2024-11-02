@@ -24,7 +24,7 @@ export default function Home() {
 
             <main className="flex flex-col items-center justify-center flex-1 px-4 md:px-20 py-20 space-y-8">
                 <Image
-                    src="/cublockchain1.png"
+                    src="/cublockchain1.ico"
                     alt="Logo"
                     width={120}
                     height={120}
