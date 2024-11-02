@@ -1,3 +1,5 @@
+"use client";
+
 import Image from 'next/image';
 import SocialIcon from '../common/SocialIcon';
 import { socialLinks } from '../common/Data';
@@ -18,12 +20,12 @@ export default function Header() {
                         height={50}
                         className="hover:opacity-80 transition-opacity"
                     />
-                    <div className="ml-4 flex flex-col hidden md:flex">
+                    <div className="ml-4 flex-col md:flex hidden">
                         <span className="text-xl font-bold text-gray-800">Carleton Blockchain</span>
                     </div>
                 </div>
                 <div className="flex items-center">
-                    <div className="flex gap-4 mr-12 py-4 hidden md:flex">
+                    <div className="flex gap-4 mr-12 py-4 md:flex hidden">
                         {socialLinks.map(({ href, icon, label }) => (
                             <SocialIcon
                                 key={label}
@@ -63,20 +65,22 @@ export default function Header() {
                 }`}>
                     {socialLinks
                         .filter(link => !link.href.includes('discord'))
-                        .map(({ href, icon, label }) => (
-                            <a
+                        .map(({ href, icon: Icon, label }) => (
+                            <div
                                 key={label}
-                                href={href}
                                 className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                             >
-                                <SocialIcon
+                                <a
                                     href={href}
-                                    icon={icon}
-                                    label={label}
-                                    size={40}
-                                />
-                            </a>
-                    ))}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-600 hover:text-[#4A4F8C] transition-colors"
+                                    aria-label={label}
+                                >
+                                    <Icon size={40} />
+                                </a>
+                            </div>
+                        ))}
                 </div>
 
                 <div className={`mt-auto mb-8 w-full flex flex-col items-center gap-6 transition-all duration-300 ${

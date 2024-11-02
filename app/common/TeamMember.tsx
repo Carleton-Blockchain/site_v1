@@ -2,14 +2,15 @@ import Image from 'next/image';
 import { FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
-export interface TeamMemberProps {
+interface TeamMemberProps {
   name: string;
   role: string;
   program: string;
   year: string;
   image: string;
   linkedin: string;
-  email: string;
+  x: string;
+  website?: string;
 }
 
 export default function TeamMember({ 
@@ -19,7 +20,7 @@ export default function TeamMember({
   year, 
   image, 
   linkedin, 
-  email 
+  x,
 }: TeamMemberProps) {
   return (
     <div className="flex flex-col items-center max-w-sm mx-auto w-full">
@@ -46,7 +47,7 @@ export default function TeamMember({
           <FaLinkedin size={20} />
         </a>
         <a 
-          href={`mailto:${email}`} 
+          href={x} 
           className="text-gray-600 hover:text-[#4A4F8C]"
         >
           <MdEmail size={20} />
