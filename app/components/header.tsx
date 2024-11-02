@@ -14,7 +14,7 @@ export default function Header() {
             <div className="flex items-center justify-between w-full px-12 py-14">
                 <div className="flex items-center">
                     <Image
-                        src="/cublockchain1.png"
+                        src="/cublockchain1.ico"
                         alt="Logo"
                         width={50}
                         height={50}

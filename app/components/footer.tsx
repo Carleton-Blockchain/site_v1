@@ -9,7 +9,7 @@ export default function Footer() {
                 {/* Logo Section */}
                 <div className="flex items-center justify-center mb-8">
                     <Image
-                        src="/cublockchain1.png"
+                        src="/cublockchain1.ico"
                         alt="Logo"
                         width={40}
                         height={40}
