@@ -40,7 +40,7 @@ export default function Home() {
 
                 <div className="flex flex-col items-center space-y-2 text-center">
                     <h3 className="text-lg font-medium text-gray-800">
-                        At Carleton Blockchain, we're fostering the next generation of crypto
+                        At Carleton Blockchain, we&apos;sre fostering the next generation of crypto
                     </h3>
                     <h3 className="text-lg font-medium text-gray-800">
                         enthusiasts and blockchain developers!
