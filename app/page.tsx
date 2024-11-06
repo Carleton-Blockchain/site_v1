@@ -50,7 +50,7 @@ export default function Home() {
         
                 <div className="flex flex-col items-center justify-center flex-1">
                 <a
-                    href="https://discord.gg/3mDZXNnH"
+                    href="https://discord.gg/R3hPZjvW"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative h-12 overflow-hidden rounded-md bg-[#4A4F8C] px-6 text-neutral-50 transition hover:bg-[#7B89B8] flex items-center justify-center"
