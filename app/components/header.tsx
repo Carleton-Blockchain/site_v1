@@ -55,7 +55,7 @@ export default function Header() {
             >
                 <button 
                     onClick={() => setIsMenuOpen(false)} 
-                    className="absolute top-8 right-8 text-gray-800 w-12 h-12 flex items-center justify-center text-4xl hover:bg-gray-100 rounded-full transition-all"
+                    className="absolute top-14 right-12 text-gray-800 w-12 h-12 flex items-center justify-center text-4xl hover:bg-gray-100 rounded-full transition-all"
                 >
                     ✕
                 </button>
@@ -98,7 +98,7 @@ export default function Header() {
                     </a>
 
                     <a
-                        href="https://discord.gg/R3hPZjvW"
+                        href="https://discord.gg/9FgYbBfhK2"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group relative h-16 w-3/4 overflow-hidden rounded-md bg-[#4A4F8C] px-6 text-neutral-50 transition hover:bg-[#7B89B8] flex items-center justify-center"

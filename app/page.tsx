@@ -50,7 +50,7 @@ export default function Home() {
         
                 <div className="flex flex-col items-center justify-center flex-1">
                 <a
-                    href="https://discord.gg/R3hPZjvW"
+                    href="https://discord.gg/9FgYbBfhK2"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative h-12 overflow-hidden rounded-md bg-[#4A4F8C] px-6 text-neutral-50 transition hover:bg-[#7B89B8] flex items-center justify-center"
@@ -124,15 +124,17 @@ export default function Home() {
                         ))}
                     </div>
                     <div className="flex justify-center mt-8 py-10">
-                        <a 
-                            href="https://airtable.com/appFyj8uk3eYgu15j/pagyl0OneNLCVTXpA/form" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-neutral-600 bg-transparent px-6 font-medium text-neutral-600 transition-all duration-300 hover:-translate-x-3 hover:-translate-y-3"
-                        >
-                            <span className="relative z-10">Join Our Team! 🚀</span>
+                        <button className="group relative">
+                            <a 
+                                href="https://airtable.com/appFyj8uk3eYgu15j/pagyl0OneNLCVTXpA/form" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="relative z-10 inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-neutral-200 bg-transparent px-6 font-medium text-neutral-600 transition-all duration-300 group-hover:-translate-x-3 group-hover:-translate-y-3"
+                            >
+                                Join Our Team! 🚀
+                            </a>
                             <div className="absolute inset-0 z-0 h-full w-full rounded-md transition-all duration-300 group-hover:-translate-x-3 group-hover:-translate-y-3 group-hover:[box-shadow:5px_5px_#a3a3a3,10px_10px_#d4d4d4,15px_15px_#e5e5e5]"></div>
-                        </a>
+                        </button>
                     </div>
                 </section>
 
@@ -149,15 +151,17 @@ export default function Home() {
                 
 
                 <div className="flex justify-center mt-8 mb-8 pt-10">
-                    <a 
-                        href="https://airtable.com/appFyj8uk3eYgu15j/pagfjUclBI8HI1kxi/form" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-neutral-600 bg-transparent px-6 font-medium text-neutral-600 transition-all duration-300 hover:-translate-x-3 hover:-translate-y-3"
-                    >
-                        <span className="relative z-10">Contact Us📬</span>
+                    <button className="group relative">
+                        <a 
+                            href="https://airtable.com/appFyj8uk3eYgu15j/pagfjUclBI8HI1kxi/form" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="relative z-10 inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-neutral-200 bg-transparent px-6 font-medium text-neutral-600 transition-all duration-300 group-hover:-translate-x-3 group-hover:-translate-y-3"
+                        >
+                            Contact Us📬
+                        </a>
                         <div className="absolute inset-0 z-0 h-full w-full rounded-md transition-all duration-300 group-hover:-translate-x-3 group-hover:-translate-y-3 group-hover:[box-shadow:5px_5px_#a3a3a3,10px_10px_#d4d4d4,15px_15px_#e5e5e5]"></div>
-                    </a>
+                    </button>
                 </div>
             <Footer />
         </div>

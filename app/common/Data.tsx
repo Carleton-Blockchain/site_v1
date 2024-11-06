@@ -22,7 +22,7 @@ export const socialLinks = [
       label: 'Instagram',
     },
     {
-      href: 'https://discord.gg/3mDZXNnH',
+      href: 'https://discord.gg/9FgYbBfhK2',
       icon: FaDiscord,
       label: 'Discord',
     },
