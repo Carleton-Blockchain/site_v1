@@ -8,6 +8,7 @@ import Footer from './components/footer';
 import FAQ from './components/faq';
 import OurMission from './components/mission';
 import Header from './components/header';
+import Countdown from './components/countdown';
 
 export default function Home() {
 
@@ -71,6 +72,12 @@ export default function Home() {
                 </a>
                 </div>
 
+                <br className="mt-10"/>
+
+                <Countdown />
+
+         
+                        
                 <OurMission/>
 
                 <section className="w-full max-w-6xl mx-auto px-4 py-5">

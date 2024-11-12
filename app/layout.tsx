@@ -46,9 +46,11 @@ export const metadata: Metadata = {
     description: "Carleton's fastest growing student led blockchain organization!",
     images: ["https://www.carletonblockchain.com/cubanner.png"],
   },
-  themeColor: "#B8C6E5",
 };
 
+export const viewport = {
+  themeColor: "#B8C6E5",
+};
 
 export default function RootLayout({
   children,
@@ -57,6 +59,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
