@@ -84,7 +84,7 @@ export default function Home() {
                   time="6:00 PM-7:00 PM" 
                   location="Carleton University, Ottawa" 
                   room="HP 5435" 
-                  onSignUp={() => window.open("https://lu.ma/calendar/manage/cal-4TTFLrN6AAvd93A", "_blank")} 
+                  onSignUp={() => window.open("https://lu.ma/carletonblockchain", "_blank")} 
                 />
                 <OurMission/>
 
