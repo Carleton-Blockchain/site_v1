@@ -8,6 +8,9 @@ import Footer from './components/footer';
 import FAQ from './components/faq';
 import OurMission from './components/mission';
 import Header from './components/header';
+import Countdown from './components/countdown';
+import { EventCard } from './components/event';
+
 
 export default function Home() {
 
@@ -15,11 +18,10 @@ export default function Home() {
 
     return (
         <div className="min-h-screen flex flex-col relative">
-            <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:3rem_2rem]">
+            <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:3rem_3rem]">
                 <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_320px_at_50%_350px,#C9EBFF,transparent)]">
                 </div>
             </div>
-            
             <Header/>
 
             <main className="flex flex-col items-center justify-center flex-1 px-4 md:px-20 py-20 space-y-8">
@@ -71,6 +73,19 @@ export default function Home() {
                 </a>
                 </div>
 
+                <br className="mt-10"/>
+
+                <Countdown />
+
+                <EventCard 
+                flyerImage='e1.png'
+                  title="Blockchain 101 with Karim Saadeh" 
+                  date="Nov 27, 2024" 
+                  time="6:00 PM-7:00 PM" 
+                  location="Carleton University, Ottawa" 
+                  room="HP 5435" 
+                  onSignUp={() => window.open("https://lu.ma/l94aro7a", "_blank")} 
+                />
                 <OurMission/>
 
                 <section className="w-full max-w-6xl mx-auto px-4 py-5">

@@ -12,8 +12,18 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        'border-slide': 'border-slide 4s linear infinite',
+      },
+      keyframes: {
+        'border-slide': {
+          '0%': { 'background-position': '200% 0' },
+          '100%': { 'background-position': '-200% 0' },
+        },
+      },
     },
   },
   plugins: [],
 };
 export default config;
+
