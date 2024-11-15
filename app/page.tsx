@@ -81,7 +81,7 @@ export default function Home() {
                 flyerImage='e1.png'
                   title="Blockchain 101 with Karim Saadeh" 
                   date="Nov 27, 2024" 
-                  time="6:00 PM-7:00 PM" 
+                  time="6:00 PM - 8:00 PM" 
                   location="Carleton University, Ottawa" 
                   room="HP 5435" 
                   onSignUp={() => window.open("https://lu.ma/carletonblockchain", "_blank")} 
