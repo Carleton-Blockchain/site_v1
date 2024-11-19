@@ -6,10 +6,9 @@ import SocialIcon from './common/SocialIcon';
 import {teamMembers, faqs } from './common/Data';
 import Footer from './components/footer';
 import FAQ from './components/faq';
-import OurMission from './components/mission';
 import Header from './components/header';
 import Countdown from './components/countdown';
-import { EventCard } from './components/event';
+
 
 
 export default function Home() {
@@ -51,42 +50,43 @@ export default function Home() {
             </main>
         
                 <div className="flex flex-col items-center justify-center flex-1">
+                    <div className="flex gap-4">
                 <a
-                    href="https://discord.gg/9FgYbBfhK2"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative h-12 overflow-hidden rounded-md bg-[#4A4F8C] px-6 text-neutral-50 transition hover:bg-[#7B89B8] flex items-center justify-center"
-                >
-                    <span className="relative flex items-center gap-2">
-                        <FaDiscord size={24} />
-                        <span>Join Our Discord!</span>
-                    </span>
-                    <div className="absolute inset-0 flex w-full [animation:shine_3.75s_ease-in-out_infinite]">
-                        <div className="relative h-full w-8 -skew-x-12 bg-white/20 translate-x-[-200%]"></div>
-                    </div>
-                    <style jsx>{`
-                        @keyframes shine {
-                            from { transform: translateX(-200%); }
-                            to { transform: translateX(200%); }
-                        }
-                    `}</style>
-                </a>
+                        href="https://lu.ma/carletonblockchain"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="h-12 w-48 rounded-md bg-neutral-50 text-[#4A4F8C] border-2 border-[#4A4F8C] transition hover:bg-neutral-100 flex items-center justify-center"
+                    >
+                        <span className="flex items-center gap-2">
+                            <span>Come to an Event!</span>
+                        </span>
+                    </a>
+
+                    <a
+                        href="https://discord.gg/9FgYbBfhK2"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="h-12 w-48 rounded-md bg-[#4A4F8C] text-neutral-50 transition hover:bg-[#7B89B8] flex items-center justify-center"
+                    >
+                        <span className="flex items-center gap-2">
+                            <FaDiscord size={24} />
+                            <span>Join Discord</span>
+                        </span>
+                    </a>
+
+                </div>
                 </div>
 
-                <br className="mt-10"/>
+                <div className="h-[120px]"></div>
 
-                <Countdown />
+                <div className="relative h-full w-full">
+                    <div className="absolute top-0 z-[-2] h-screen w-screen rotate-180 transform bg-white bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(74,144,226,.5)_100%)]"></div>
+                    <Countdown />
+                </div>
 
-                <EventCard 
-                flyerImage='e1.png'
-                  title="Blockchain 101 with Karim Saadeh" 
-                  date="Nov 27, 2024" 
-                  time="6:00 PM - 8:00 PM" 
-                  location="Carleton University, Ottawa" 
-                  room="HP 5435" 
-                  onSignUp={() => window.open("https://lu.ma/carletonblockchain", "_blank")} 
-                />
-                <OurMission/>
+                <div className="h-[60px]"></div>
+
+              
 
                 <section className="w-full max-w-6xl mx-auto px-4 py-5">
                     <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">

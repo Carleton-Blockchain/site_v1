@@ -11,7 +11,7 @@ interface EventCardProps {
 export function EventCard({ title = "First Event", date = "November 28, 2024", time = "6:00 PM", location = "Carleton University", room, onSignUp, flyerImage }: EventCardProps) {
   return (
     <div className="w-full flex justify-center items-center my-8">
-      <div className="rounded-lg border border-[#4A4F8C] p-6 max-w-4xl bg-white/50 backdrop-blur-sm">
+      <div className="rounded-lg p-6 max-w-4xl bg-white/50 backdrop-blur-sm">
         <div className="flex flex-col md:flex-row gap-2 items-center justify-center">
           {/* Event Information */}
           <div className="md:w-2/3 flex flex-col items-center text-center">
