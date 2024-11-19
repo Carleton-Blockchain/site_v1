@@ -15,31 +15,30 @@ export function EventCard({ title = "First Event", date = "November 28, 2024", t
         <div className="flex flex-col md:flex-row gap-2 items-center justify-center">
           {/* Event Information */}
           <div className="md:w-2/3 flex flex-col items-center text-center">
-            <h3 className="text-xl font-semibold mb-4 text-black">{title}</h3>
+            <h3 className="text-xl font-semibold mb-4 text-[#4A4F8C]">{title}</h3>
             
             <div className="space-y-2 mb-6">
               <div className="flex items-center gap-2">
-                <CalendarIcon className="w-4 h-4 text-black" />
-                <span className="text-black">{date}</span>
+                <CalendarIcon className="w-4 h-4 text-[#4A4F8C]" />
+                <span className="text-[#4A4F8C]">{date}</span>
               </div>
               
               <div className="flex items-center gap-2">
-                <ClockIcon className="w-4 h-4 text-black" />
-                <span className="text-black">{time}</span>
+                <ClockIcon className="w-4 h-4 text-[#4A4F8C]" />
+                <span className="text-[#4A4F8C]">{time}</span>
+              </div>
+              
+              <div className="flex items-center gap-2">
+                <MapPinIcon className="w-4 h-4 text-[#4A4F8C]" />
+                <span className="text-[#4A4F8C]">{location}</span>
               </div>
 
               {room && (
                 <div className="flex items-center gap-2">
-                  <RoomIcon className="w-4 h-4 text-black" />
-                  <span className="text-black">Room {room}</span>
+                  <RoomIcon className="w-4 h-4 text-[#4A4F8C]" />
+                  <span className="text-[#4A4F8C]">Room {room}</span>
                 </div>
               )}
-              
-              <div className="flex items-center gap-2">
-                <MapPinIcon className="w-4 h-4 text-black" />
-                <span className="text-black">{location}</span>
-              </div>
-
             </div>
 
             <button 
@@ -83,5 +82,5 @@ const MapPinIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const RoomIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M3 3h18v18H3z"></path><path d="M9 3v18"></path><path d="M15 3v18"></path><path d="M3 9h18"></path><path d="M3 15h18"></path></svg>
 );

@@ -21,17 +21,17 @@ const SevenSegmentDigit = ({ value }: { value: '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'
     return (
         <div className="relative w-12 h-20 mx-0.5 md:w-16 md:h-28 md:mx-1">
             {/* Horizontal segments - updated with mobile-first heights */}
-            <div className={`absolute top-0 left-2 right-2 h-1 md:h-2 ${segments[value][0] ? 'bg-black' : 'bg-[#E3E5E8]'}`} /> {/* A */}
-            <div className={`absolute top-[50%] left-2 right-2 h-1 md:h-2 ${segments[value][3] ? 'bg-black' : 'bg-[#E3E5E8]'}`} /> {/* D */}
-            <div className={`absolute bottom-0 left-2 right-2 h-1 md:h-2 ${segments[value][6] ? 'bg-black' : 'bg-[#E3E5E8]'}`} /> {/* G */}
+            <div className={`absolute top-0 left-2 right-2 h-1 md:h-2 ${segments[value][0] ? 'bg-[#4A4F8C]' : 'bg-[#E3E5E8]'}`} /> {/* A */}
+            <div className={`absolute top-[50%] left-2 right-2 h-1 md:h-2 ${segments[value][3] ? 'bg-[#4A4F8C]' : 'bg-[#E3E5E8]'}`} /> {/* D */}
+            <div className={`absolute bottom-0 left-2 right-2 h-1 md:h-2 ${segments[value][6] ? 'bg-[#4A4F8C]' : 'bg-[#E3E5E8]'}`} /> {/* G */}
             
             {/* Vertical segments - top - updated with mobile-first widths */}
-            <div className={`absolute top-1 left-0 w-1 md:w-2 h-[45%] ${segments[value][1] ? 'bg-black' : 'bg-[#E3E5E8]'}`} /> {/* B */}
-            <div className={`absolute top-1 right-0 w-1 md:w-2 h-[45%] ${segments[value][2] ? 'bg-black' : 'bg-[#E3E5E8]'}`} /> {/* C */}
+            <div className={`absolute top-1 left-0 w-1 md:w-2 h-[45%] ${segments[value][1] ? 'bg-[#4A4F8C]' : 'bg-[#E3E5E8]'}`} /> {/* B */}
+            <div className={`absolute top-1 right-0 w-1 md:w-2 h-[45%] ${segments[value][2] ? 'bg-[#4A4F8C]' : 'bg-[#E3E5E8]'}`} /> {/* C */}
             
             {/* Vertical segments - bottom - updated with mobile-first widths */}
-            <div className={`absolute bottom-1 left-0 w-1 md:w-2 h-[45%] ${segments[value][4] ? 'bg-black' : 'bg-[#E3E5E8]'}`} /> {/* E */}
-            <div className={`absolute bottom-1 right-0 w-1 md:w-2 h-[45%] ${segments[value][5] ? 'bg-black' : 'bg-[#E3E5E8]'}`} /> {/* F */}
+            <div className={`absolute bottom-1 left-0 w-1 md:w-2 h-[45%] ${segments[value][4] ? 'bg-[#4A4F8C]' : 'bg-[#E3E5E8]'}`} /> {/* E */}
+            <div className={`absolute bottom-1 right-0 w-1 md:w-2 h-[45%] ${segments[value][5] ? 'bg-[#4A4F8C]' : 'bg-[#E3E5E8]'}`} /> {/* F */}
         </div>
     );
 };
