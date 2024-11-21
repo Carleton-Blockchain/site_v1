@@ -37,7 +37,7 @@ export const socialLinks = [
       image: '/pfp/pfp.png',
       linkedin: 'https://www.linkedin.com/in/rodneyshenn/',
       x: 'https://x.com/992rodney',
-      website: 'https://www.rodneyshenn.com'
+      website: 'https://rodneyshen.netlify.app'
     },
     {
       name: 'Eshan Betrabet',
