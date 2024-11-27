@@ -1,30 +1,51 @@
 "use client";
 
+import Link from 'next/link';
 import Image from 'next/image';
 import SocialIcon from '../common/SocialIcon';
 import { socialLinks } from '../common/Data';
 import { FaDiscord } from 'react-icons/fa';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     return (
-        <div>
-            <div className="flex items-center justify-between w-full px-12 py-14">
-                <div className="flex items-center">
-                    <Image
-                        src="/cublockchain1.ico"
-                        alt="Logo"
-                        width={50}
-                        height={50}
-                        className="hover:opacity-80 transition-opacity"
-                    />
-                    <div className="ml-4 flex-col md:flex hidden">
-                        <span className="text-xl font-bold text-gray-800">Carleton Blockchain</span>
-                    </div>
+        <div className="relative">
+            <div className="absolute inset-0 bg-white" />
+            
+            <div className="absolute inset-0 border-2 border-gray-300 rounded-full mx-6 my-4" />
+            
+            <div className="relative z-10 flex items-center justify-between w-full px-12 py-8">
+                <div className="flex items-center space-x-4">
+                    <Link href="/" className="flex items-center space-x-4 hover:opacity-80 transition-opacity">
+                        <Image
+                            src="/cublockchain1.ico"
+                            alt="Logo"
+                            width={50}
+                            height={50}
+                        />
+                        <div className="ml-2 flex-col">
+                            <span className="text-xl font-bold text-[#4A4F8C]">
+                                Carleton<br/>Blockchain
+                            </span>
+                        </div>
+                    </Link>
+                    <Link
+                        href="/team"
+                        className={`h-12 px-4 transition hover:opacity-80 flex items-center justify-center text-xl md:flex hidden ${
+                            pathname === '/team'
+                            ? 'text-[#4A4F8C] border-2 border-[#4A4F8C] rounded-md'
+                            : 'text-[#4A4F8C]'
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        Team
+                    </Link>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center space-x-4">
                     <div className="flex gap-4 mr-12 py-4 md:flex hidden">
                         {socialLinks.map(({ href, icon, label }) => (
                             <SocialIcon
@@ -63,6 +84,20 @@ export default function Header() {
                 <div className={`flex-1 flex flex-col items-center justify-center space-y-6 transition-all duration-300 ${
                     isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}>
+                    <div className="block px-4 py-2">
+                        <Link
+                            href="/team"
+                            className={`h-12 px-4 transition hover:opacity-80 flex items-center justify-center text-xl ${
+                                pathname === '/team'
+                                ? 'text-[#4A4F8C] border-2 border-[#4A4F8C] rounded-md'
+                                : 'text-[#4A4F8C]'
+                            }`}
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            Team
+                        </Link>
+                    </div>
+
                     {socialLinks
                         .filter(link => !link.href.includes('discord'))
                         .map(({ href, icon: Icon, label }) => (
@@ -87,7 +122,7 @@ export default function Header() {
                     isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}>
                     <a 
-                        href="https://airtable.com/appFyj8uk3eYgu15j/pagyl0OneNLCVTXpA/form" 
+                        href="https://simplistic-character-5e4.notion.site/Join-Carleton-Blockchain-14bf02539b1f8052ac89c3130c8d37f1" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="group relative z-10 inline-flex h-16 w-3/4 items-center justify-center overflow-hidden rounded-md border border-neutral-600 bg-transparent px-6 font-medium text-neutral-600 transition-all duration-300 group-hover:-translate-x-3 group-hover:-translate-y-3"

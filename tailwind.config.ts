@@ -13,14 +13,19 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       animation: {
-        'border-slide': 'border-slide 4s linear infinite',
+        slide: 'slide 30s linear infinite',
       },
       keyframes: {
-        'border-slide': {
-          '0%': { 'background-position': '200% 0' },
-          '100%': { 'background-position': '-200% 0' },
-        },
+        slide: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        }
       },
+    },
+  },
+  variants: {
+    extend: {
+      animation: ['hover', 'pause'],
     },
   },
   plugins: [],

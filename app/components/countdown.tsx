@@ -47,8 +47,8 @@ const Countdown = () => {
     const [showConfetti, setShowConfetti] = useState(false);
 
     useEffect(() => {
-        // Set target time to November 27, 2024, 6:00 PM EST
-        const targetTime = new Date('2024-11-27T18:00:00-05:00').getTime();
+        // Set target time to November 28, 2024, 6:00 PM EST
+        const targetTime = new Date('2024-11-28T18:00:00-05:00').getTime();
 
         const timer = setInterval(() => {
             const now = new Date().getTime();
@@ -69,6 +69,7 @@ const Countdown = () => {
             const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
             setTimeLeft({ days, hours, minutes, seconds });
+
         }, 1000);
 
         return () => clearInterval(timer);
@@ -87,42 +88,48 @@ const Countdown = () => {
                     "
                 >
                     {showConfetti && <Confetti />}
-                    <h2 className="text-xl md:text-2xl font-bold text-black text-center">Time until first event!🥳</h2>
+                    <h2 className="text-xl md:text-2xl font-bold text-black text-center">Blockchain 101 Countdown!🥳</h2>
                     <div className="flex flex-row flex-wrap justify-center items-center gap-4 md:gap-8 p-2 md:p-4">
-                        {/* Days */}
-                        <div className="flex flex-col items-center">
-                            <div className="flex">
-                                <SevenSegmentDigit value={String(timeLeft.days).padStart(2, '0')[0] as '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'} />
-                                <SevenSegmentDigit value={String(timeLeft.days).padStart(2, '0')[1] as '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'} />
+                        {/* Days and Hours - stack on mobile */}
+                        <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+                            {/* Days */}
+                            <div className="flex flex-col items-center">
+                                <div className="flex">
+                                    <SevenSegmentDigit value={String(timeLeft.days).padStart(2, '0')[0] as '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'} />
+                                    <SevenSegmentDigit value={String(timeLeft.days).padStart(2, '0')[1] as '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'} />
+                                </div>
+                                <span className="text-xs text-black mt-2 tracking-widest font-bold">DAYS</span>
                             </div>
-                            <span className="text-xs text-black mt-2 tracking-widest font-bold">DAYS</span>
+
+                            {/* Hours */}
+                            <div className="flex flex-col items-center">
+                                <div className="flex">
+                                    <SevenSegmentDigit value={String(timeLeft.hours).padStart(2, '0')[0] as '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'} />
+                                    <SevenSegmentDigit value={String(timeLeft.hours).padStart(2, '0')[1] as '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'} />
+                                </div>
+                                <span className="text-xs text-black mt-2 tracking-widest font-bold">HOURS</span>
+                            </div>
                         </div>
 
-                        {/* Hours */}
-                        <div className="flex flex-col items-center">
-                            <div className="flex">
-                                <SevenSegmentDigit value={String(timeLeft.hours).padStart(2, '0')[0] as '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'} />
-                                <SevenSegmentDigit value={String(timeLeft.hours).padStart(2, '0')[1] as '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'} />
+                        {/* Minutes and Seconds - stack on mobile */}
+                        <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+                            {/* Minutes */}
+                            <div className="flex flex-col items-center">
+                                <div className="flex">
+                                    <SevenSegmentDigit value={String(timeLeft.minutes).padStart(2, '0')[0] as '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'} />
+                                    <SevenSegmentDigit value={String(timeLeft.minutes).padStart(2, '0')[1] as '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'} />
+                                </div>
+                                <span className="text-xs text-black mt-2 tracking-widest font-bold">MINUTES</span>
                             </div>
-                            <span className="text-xs text-black mt-2 tracking-widest font-bold">HOURS</span>
-                        </div>
 
-                        {/* Minutes */}
-                        <div className="flex flex-col items-center">
-                            <div className="flex">
-                                <SevenSegmentDigit value={String(timeLeft.minutes).padStart(2, '0')[0] as '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'} />
-                                <SevenSegmentDigit value={String(timeLeft.minutes).padStart(2, '0')[1] as '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'} />
+                            {/* Seconds */}
+                            <div className="flex flex-col items-center">
+                                <div className="flex">
+                                    <SevenSegmentDigit value={String(timeLeft.seconds).padStart(2, '0')[0] as '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'} />
+                                    <SevenSegmentDigit value={String(timeLeft.seconds).padStart(2, '0')[1] as '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'} />
+                                </div>
+                                <span className="text-xs text-black mt-2 tracking-widest font-bold">SECONDS</span>
                             </div>
-                            <span className="text-xs text-black mt-2 tracking-widest font-bold">MINUTES</span>
-                        </div>
-
-                        {/* Seconds */}
-                        <div className="flex flex-col items-center">
-                            <div className="flex">
-                                <SevenSegmentDigit value={String(timeLeft.seconds).padStart(2, '0')[0] as '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'} />
-                                <SevenSegmentDigit value={String(timeLeft.seconds).padStart(2, '0')[1] as '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'} />
-                            </div>
-                            <span className="text-xs text-black mt-2 tracking-widest font-bold">SECONDS</span>
                         </div>
                     </div>
 

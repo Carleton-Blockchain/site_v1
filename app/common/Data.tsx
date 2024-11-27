@@ -31,10 +31,10 @@ export const socialLinks = [
  export const teamMembers = [
     {
       name: 'Rodney Shen',
-      role: 'Co-Founder',
+      role: 'Co-Founder - President',
       program: 'Computer Science',
       year: '3rd Year',
-      image: '/pfp/pfp.png',
+      image: '/pfp/rodney.webp',
       linkedin: 'https://www.linkedin.com/in/rodneyshenn/',
       x: 'https://x.com/992rodney',
       website: 'https://rodneyshen.netlify.app'
@@ -44,7 +44,7 @@ export const socialLinks = [
       role: 'Co-Founder',
       program: 'Cognitive Science',
       year: '3rd Year',
-      image: '/pfp/eshan.png',
+      image: '/pfp/eshan.webp',
       linkedin: 'https://www.linkedin.com/in/eshan-betrabet/',
       x: 'https://x.com/eshanbetrabet',
       website: 'https://eshanb.com'
@@ -54,10 +54,28 @@ export const socialLinks = [
       role: 'Co-Founder',
       program: 'Commerce',
       year: 'Alumni',
-      image: '/pfp/cedric.png',
+      image: '/pfp/cedric.webp',
       linkedin: 'https://www.linkedin.com/in/cedric-osagie/',
       x: 'https://x.com/CedricOsagie'
     },
+    {
+      name: 'Ansh Kakkar',
+      role: 'Web Dev',
+      program: 'Computer Science',
+      year: '2nd Year',
+      image: '/pfp/ansh.webp',
+      linkedin: 'https://www.linkedin.com/in/ansh-kakkar/',
+      website: 'https://www.anshkakkar.dev/'
+    },
+    {
+      name: 'Karim Saadeh',
+      role: 'Advisor',
+      year: 'Alumni',
+      image: '/pfp/karim.webp',
+      linkedin: 'https://www.linkedin.com/in/karimsaadeh/',
+      x: 'https://x.com/CrabMan_eth',
+      website: 'https://dot.cards/karimsaadeh'
+    }
   ];
 
  export const faqs = [
