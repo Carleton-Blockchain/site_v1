@@ -42,7 +42,7 @@ export default function Header() {
                         }`}
                         onClick={() => setIsMenuOpen(false)}
                     >
-                        Team
+                        Team 
                     </Link>
                 </div>
                 <div className="flex items-center space-x-4">
