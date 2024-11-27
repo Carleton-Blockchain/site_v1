@@ -71,7 +71,7 @@ export const socialLinks = [
       name: 'Ansh Kakkar',
       role: 'Web Dev',
       program: 'Computer Science',
-      year: '2nd',
+      year: '2nd Year',
       image: '/pfp/ansh.webp',
       linkedin: 'https://www.linkedin.com/in/ansh-kakkar/',
       website: 'https://www.anshkakkar.dev/'
