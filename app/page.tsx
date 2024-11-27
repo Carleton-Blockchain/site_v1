@@ -1,19 +1,24 @@
 "use client";
 import Image from 'next/image';
 import { FaLinkedin, FaDiscord } from 'react-icons/fa';
-import {useState } from 'react';
+import {useState, useRef } from 'react';
 import SocialIcon from './common/SocialIcon';
 import {teamMembers, faqs } from './common/Data';
 import Footer from './components/footer';
 import FAQ from './components/faq';
 import Header from './components/header';
 import Countdown from './components/countdown';
+import { motion, useInView } from 'framer-motion';
 
 
 
 export default function Home() {
 
     const [openFaq, setOpenFaq] = useState<number | null>(null);
+    const countdownRef = useRef(null);
+    const faqRef = useRef(null);
+    const isCountdownInView = useInView(countdownRef, { once: true });
+    const isFaqInView = useInView(faqRef, { once: true });
 
     return (
         <div className="min-h-screen flex flex-col relative">
@@ -23,7 +28,15 @@ export default function Home() {
             </div>
             <Header/>
 
-            <main className="flex flex-col items-center justify-center flex-1 px-4 md:px-20 py-20 space-y-8">
+            <div className="h-[75px]"></div>
+
+            <motion.main
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="flex flex-col items-center justify-center flex-1 px-4 md:px-20 py-20 space-y-8"
+            >
                 <Image
                     src="/cublockchain1.ico"
                     alt="Logo"
@@ -47,113 +60,82 @@ export default function Home() {
                         crypto enthusiasts and blockchain developers!
                     </h3>
                 </div>
-            </main>
+            </motion.main>
         
                 <div className="flex flex-col items-center justify-center flex-1">
-                    <div className="flex gap-4">
-                <a
-                        href="https://lu.ma/carletonblockchain"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="h-12 w-48 rounded-md bg-neutral-50 text-[#4A4F8C] border-2 border-[#4A4F8C] transition hover:bg-neutral-100 flex items-center justify-center"
-                    >
-                        <span className="flex items-center gap-2">
-                            <span>Come to an Event!</span>
-                        </span>
-                    </a>
+                    <div className="flex flex-col md:flex-row gap-6 px-4 w-full md:w-auto">
+                        <motion.a
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 20 }}
+                            transition={{ 
+                                duration: 0.7,
+                                ease: [0.215, 0.610, 0.355, 1.000],
+                                delay: 0.3
+                            }}
+                            href="https://lu.ma/carletonblockchain"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="h-12 w-full md:w-48 rounded-md bg-neutral-50 text-[#4A4F8C] border-2 border-[#4A4F8C] transition hover:bg-neutral-100 flex items-center justify-center"
+                        >
+                            <span className="flex items-center gap-2 px-4">
+                                <span>Come to an Event!</span>
+                            </span>
+                        </motion.a>
 
-                    <a
-                        href="https://discord.gg/9FgYbBfhK2"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="h-12 w-48 rounded-md bg-[#4A4F8C] text-neutral-50 transition hover:bg-[#7B89B8] flex items-center justify-center"
-                    >
-                        <span className="flex items-center gap-2">
-                            <FaDiscord size={24} />
-                            <span>Join Discord</span>
-                        </span>
-                    </a>
-
-                </div>
+                        <motion.a
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 20 }}
+                            transition={{ 
+                                duration: 0.7,
+                                ease: [0.215, 0.610, 0.355, 1.000],
+                                delay: 0.4
+                            }}
+                            href="https://discord.gg/9FgYbBfhK2"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="h-12 w-full md:w-48 rounded-md bg-[#4A4F8C] text-neutral-50 transition hover:bg-[#7B89B8] flex items-center justify-center"
+                        >
+                            <span className="flex items-center gap-2 px-4">
+                                <FaDiscord size={24} />
+                                <span>Join Discord</span>
+                            </span>
+                        </motion.a>
+                    </div>
                 </div>
 
                 <div className="h-[120px]"></div>
 
                 <div className="relative h-full w-full">
-                    <div className="absolute top-0 z-[-2] h-screen w-screen rotate-180 transform bg-white bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(74,144,226,.5)_100%)]"></div>
-                    <Countdown />
+                    <div className="absolute inset-0 z-[-2] h-full w-full rotate-180 transform bg-white bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(74,144,226,.5)_100%)]"></div>
+                    <motion.div
+                        ref={countdownRef}
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={isCountdownInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                        transition={{ 
+                            duration: 0.7,
+                            ease: [0.215, 0.610, 0.355, 1.000],
+                            delay: 0.2
+                        }}
+                    >
+                        <Countdown />
+                    </motion.div>
                 </div>
 
                 <div className="h-[60px]"></div>
 
-              
-
-                <section className="w-full max-w-6xl mx-auto px-4 py-5">
-                    <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
-                        Meet Our Team
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {teamMembers.map((member) => (
-                            <div key={member.name} className="flex flex-col items-center">
-                                <div className="relative w-48 h-48 mb-4">
-                                    <Image
-                                        src={member.image}
-                                        alt={member.name}
-                                        fill
-                                        className="object-cover rounded-full"
-                                    />
-                                </div>
-                                <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
-                                <p className="text-[#4A4F8C] font-medium">{member.role}</p>
-                                <p className="text-gray-600 text-center mt-2">
-                                    {member.program} • {member.year}
-                                </p>
-                                <div className="flex gap-4 mt-3">
-                                    <SocialIcon
-                                        href={member.linkedin}
-                                        icon={FaLinkedin}
-                                        label="LinkedIn"
-                                    />
-                                    <SocialIcon
-                                        href={member.x}
-                                        icon={() => (
-                                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                                          </svg>
-                                        )}
-                                        label="Email"
-                                    />
-                                    {member.website && (
-                                        <SocialIcon
-                                            href={member.website}
-                                            icon={() => (
-                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                                                </svg>
-                                            )}
-                                            label="Website"
-                                        />
-                                    )}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="flex justify-center mt-8 py-10">
-                        <button className="group relative">
-                            <a 
-                                href="https://airtable.com/appFyj8uk3eYgu15j/pagyl0OneNLCVTXpA/form" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="relative z-10 inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-neutral-200 bg-transparent px-6 font-medium text-neutral-600 transition-all duration-300 group-hover:-translate-x-3 group-hover:-translate-y-3"
-                            >
-                                Join Our Team! 🚀
-                            </a>
-                            <div className="absolute inset-0 z-0 h-full w-full rounded-md transition-all duration-300 group-hover:-translate-x-3 group-hover:-translate-y-3 group-hover:[box-shadow:5px_5px_#a3a3a3,10px_10px_#d4d4d4,15px_15px_#e5e5e5]"></div>
-                        </button>
-                    </div>
-                </section>
-
-                <div className='flex flex-col items-center justify-center flex-1 px-6 md:px-20 space-y-8'>
+                <motion.div 
+                    ref={faqRef}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={isFaqInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                    transition={{ 
+                        duration: 0.7,
+                        ease: [0.215, 0.610, 0.355, 1.000],
+                        delay: 0.2
+                    }}
+                    className='flex flex-col items-center justify-center flex-1 px-6 md:px-20 space-y-8'
+                >
                     {faqs.map((faq, index) => (
                         <FAQ
                             key={index}
@@ -162,7 +144,7 @@ export default function Home() {
                             onToggle={() => setOpenFaq(openFaq === index ? null : index)}
                         />
                     ))}
-                </div>
+                </motion.div>
                 
 
                 <div className="flex justify-center mt-8 mb-8 pt-10">

@@ -31,7 +31,7 @@ export const socialLinks = [
  export const teamMembers = [
     {
       name: 'Rodney Shen',
-      role: 'Co-Founder',
+      role: 'Co-Founder - President',
       program: 'Computer Science',
       year: '3rd Year',
       image: '/pfp/pfp.png',

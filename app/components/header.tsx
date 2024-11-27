@@ -1,5 +1,6 @@
 "use client";
 
+import Link from 'next/link';
 import Image from 'next/image';
 import SocialIcon from '../common/SocialIcon';
 import { socialLinks } from '../common/Data';
@@ -10,21 +11,33 @@ export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <div>
-            <div className="flex items-center justify-between w-full px-12 py-14">
-                <div className="flex items-center">
-                    <Image
-                        src="/cublockchain1.ico"
-                        alt="Logo"
-                        width={50}
-                        height={50}
-                        className="hover:opacity-80 transition-opacity"
-                    />
-                    <div className="ml-4 flex-col md:flex hidden">
-                        <span className="text-xl font-bold text-gray-800">Carleton Blockchain</span>
+        <div className="relative">
+            <div className="absolute inset-0 bg-white" />
+            
+            <div className="absolute inset-0 border-2 border-gray-300 rounded-full mx-6 my-4" />
+            
+            <div className="relative z-10 flex items-center justify-between w-full px-12 py-8">
+                <div className="flex items-center space-x-4">
+                    <Link href="/">
+                        <Image
+                            src="/cublockchain1.ico"
+                            alt="Logo"
+                            width={50}
+                            height={50}
+                            className="hover:opacity-80 transition-opacity"
+                        />
+                    </Link>
+                    <div className="ml-2 flex-col md:flex hidden">
+                        <Link href="/" className="text-xl font-bold text-[#4A4F8C] hover:opacity-80 transition-opacity">Carleton<br/>Blockchain</Link>
                     </div>
+                    <Link
+                        href="/team"
+                        className="h-14 px-6 text-[#4A4F8C] transition hover:opacity-80 flex items-center justify-center md:flex hidden text-xl"
+                    >
+                        Team
+                    </Link>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center space-x-4">
                     <div className="flex gap-4 mr-12 py-4 md:flex hidden">
                         {socialLinks.map(({ href, icon, label }) => (
                             <SocialIcon
@@ -63,6 +76,16 @@ export default function Header() {
                 <div className={`flex-1 flex flex-col items-center justify-center space-y-6 transition-all duration-300 ${
                     isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}>
+                    <div className="block px-4 py-2">
+                        <Link
+                            href="/team"
+                            className="h-10 px-6 text-[#4A4F8C] transition hover:opacity-80 flex items-center justify-center"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            Team_
+                        </Link>
+                    </div>
+
                     {socialLinks
                         .filter(link => !link.href.includes('discord'))
                         .map(({ href, icon: Icon, label }) => (
