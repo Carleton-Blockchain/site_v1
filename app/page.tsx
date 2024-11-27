@@ -106,6 +106,8 @@ export default function Home() {
 
                 <div className="h-[120px]"></div>
 
+                
+
                 <div className="relative h-full w-full">
                     <div className="absolute inset-0 z-[-2] h-full w-full rotate-180 transform bg-white bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(74,144,226,.5)_100%)]"></div>
                     <motion.div
@@ -135,6 +137,9 @@ export default function Home() {
                     }}
                     className='flex flex-col items-center justify-center flex-1 px-6 md:px-20 space-y-8'
                 >
+                    <h2 className="text-3xl md:text-4xl font-normal text-gray-800">
+                    Frequently asked questions
+                    </h2>
                     {faqs.map((faq, index) => (
                         <FAQ
                             key={index}
