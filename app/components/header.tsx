@@ -122,7 +122,7 @@ export default function Header() {
                     isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}>
                     <a 
-                        href="https://airtable.com/appFyj8uk3eYgu15j/pagyl0OneNLCVTXpA/form" 
+                        href="https://simplistic-character-5e4.notion.site/Join-Carleton-Blockchain-14bf02539b1f8052ac89c3130c8d37f1" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="group relative z-10 inline-flex h-16 w-3/4 items-center justify-center overflow-hidden rounded-md border border-neutral-600 bg-transparent px-6 font-medium text-neutral-600 transition-all duration-300 group-hover:-translate-x-3 group-hover:-translate-y-3"

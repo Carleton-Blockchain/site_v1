@@ -59,15 +59,6 @@ export const socialLinks = [
       x: 'https://x.com/CedricOsagie'
     },
     {
-      name: 'Karim Saadeh',
-      role: 'Advisor',
-      year: 'Alumni',
-      image: '/pfp/karim.webp',
-      linkedin: 'https://www.linkedin.com/in/karimsaadeh/',
-      x: 'https://x.com/CrabMan_eth',
-      website: 'https://dot.cards/karimsaadeh'
-    },
-    {
       name: 'Ansh Kakkar',
       role: 'Web Dev',
       program: 'Computer Science',
@@ -76,6 +67,15 @@ export const socialLinks = [
       linkedin: 'https://www.linkedin.com/in/ansh-kakkar/',
       website: 'https://www.anshkakkar.dev/'
     },
+    {
+      name: 'Karim Saadeh',
+      role: 'Advisor',
+      year: 'Alumni',
+      image: '/pfp/karim.webp',
+      linkedin: 'https://www.linkedin.com/in/karimsaadeh/',
+      x: 'https://x.com/CrabMan_eth',
+      website: 'https://dot.cards/karimsaadeh'
+    }
   ];
 
  export const faqs = [

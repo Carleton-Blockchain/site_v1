@@ -30,7 +30,7 @@ export default function TeamPage() {
                         Meet Our Team😎
                     </h1>
                     <p className="text-gray-600 max-w-2xl mx-auto">
-                        Meet the passionate individuals who drive our club forward!
+                        2015-2016 Golden State Warriors, 1995-1996 Bulls, meet our super team! 
                     </p>
                 </div>
 
@@ -102,7 +102,7 @@ export default function TeamPage() {
                     <h3 className="text-2xl font-semibold mb-6 text-black">Think you are a good fit?</h3>
                     <button className="group relative">
                         <a 
-                            href="https://airtable.com/appFyj8uk3eYgu15j/pagyl0OneNLCVTXpA/form" 
+                            href="https://simplistic-character-5e4.notion.site/Carleton-Blockchain-Recruiting-14bf02539b1f8052ac89c3130c8d37f1?pvs=73" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="relative z-10 inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-neutral-200 bg-transparent px-6 font-medium text-neutral-600 transition-all duration-300 group-hover:-translate-x-3 group-hover:-translate-y-3"

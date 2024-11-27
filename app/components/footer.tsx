@@ -19,6 +19,17 @@ export default function Footer() {
                         <span className="ml-3 text-xl font-bold text-gray-800">Carleton Blockchain</span>
                     </Link>
                 </div>
+
+                {/* Teams and Join Us Links */}
+                <div className="flex justify-center gap-8 mb-4">
+                    <Link href="/team" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                        Teams
+                    </Link>
+                    <Link href="https://simplistic-character-5e4.notion.site/Carleton-Blockchain-Recruiting-14bf02539b1f8052ac89c3130c8d37f1?pvs=73" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                        Join Us
+                    </Link>
+                </div>
+
                 <div className="flex items-center justify-center w-full">
                     <div className="flex gap-4 py-4">
                         {socialLinks.map(({ href, icon, label }) => (
