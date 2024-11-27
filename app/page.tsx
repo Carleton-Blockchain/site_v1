@@ -1,9 +1,8 @@
 "use client";
 import Image from 'next/image';
-import { FaLinkedin, FaDiscord } from 'react-icons/fa';
+import {FaDiscord } from 'react-icons/fa';
 import {useState, useRef } from 'react';
-import SocialIcon from './common/SocialIcon';
-import {teamMembers, faqs } from './common/Data';
+import {faqs } from './common/Data';
 import Footer from './components/footer';
 import FAQ from './components/faq';
 import Header from './components/header';

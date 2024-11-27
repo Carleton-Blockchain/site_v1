@@ -1,7 +1,7 @@
 "use client"
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { FaLinkedin, FaTwitter, FaGithub, FaGlobe } from 'react-icons/fa';
+import { FaLinkedin} from 'react-icons/fa';
 import Header from '../components/header';
 import { teamMembers } from '../common/Data';
 import SocialIcon from '../common/SocialIcon';
