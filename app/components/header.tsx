@@ -27,7 +27,7 @@ export default function Header() {
                             width={50}
                             height={50}
                         />
-                        <div className="ml-2 flex-col md:flex hidden">
+                        <div className="ml-2 flex-col">
                             <span className="text-xl font-bold text-[#4A4F8C]">
                                 Carleton<br/>Blockchain
                             </span>
@@ -35,12 +35,12 @@ export default function Header() {
                     </Link>
                     <Link
                         href="/team"
-                        className={`h-12 px-4 transition hover:opacity-80 flex items-center justify-center md:flex hidden text-xl ${
+                        className={`h-12 px-4 transition hover:opacity-80 flex items-center justify-center text-xl md:flex hidden ${
                             pathname === '/team'
                             ? 'text-[#4A4F8C] border-2 border-[#4A4F8C] rounded-md'
                             : 'text-[#4A4F8C]'
-                        }`
-                    }
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
                     >
                         Team
                     </Link>
@@ -87,14 +87,14 @@ export default function Header() {
                     <div className="block px-4 py-2">
                         <Link
                             href="/team"
-                            className={`h-10 px-6 transition hover:opacity-80 flex items-center justify-center ${
-                                pathname === '/team' 
-                                ? 'bg-[#5865F2] text-white rounded-full' 
+                            className={`h-12 px-4 transition hover:opacity-80 flex items-center justify-center text-xl ${
+                                pathname === '/team'
+                                ? 'text-[#4A4F8C] border-2 border-[#4A4F8C] rounded-md'
                                 : 'text-[#4A4F8C]'
                             }`}
                             onClick={() => setIsMenuOpen(false)}
                         >
-                            Team{pathname === '/team' ? '' : '_'}
+                            Team
                         </Link>
                     </div>
 
