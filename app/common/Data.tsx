@@ -58,6 +58,15 @@ export const socialLinks = [
       linkedin: 'https://www.linkedin.com/in/cedric-osagie/',
       x: 'https://x.com/CedricOsagie'
     },
+    {
+      name: 'Karim Saadeh',
+      role: 'Advisor',
+      year: 'Alumni',
+      image: '/pfp/karim.png',
+      linkedin: 'https://www.linkedin.com/in/karimsaadeh/',
+      x: 'https://x.com/CrabMan_eth',
+      website: 'https://dot.cards/karimsaadeh'
+    },
   ];
 
  export const faqs = [

@@ -4,13 +4,10 @@ import Image from 'next/image';
 import { FaLinkedin, FaTwitter, FaGithub, FaGlobe } from 'react-icons/fa';
 import Header from '../components/header';
 import { teamMembers } from '../common/Data';
-
 import SocialIcon from '../common/SocialIcon';
 import Footer from '../components/footer';
 
 export default function TeamPage() {
-
-    
 
     return (
         <motion.main 
@@ -30,7 +27,7 @@ export default function TeamPage() {
                         Team
                     </span>
                     <h1 className="text-4xl md:text-5xl font-bold mb-6 text-black ">
-                        Our Amazing Team
+                        Meet Our Team😎
                     </h1>
                     <p className="text-gray-600 max-w-2xl mx-auto">
                         Meet the passionate individuals who drive our club forward!
@@ -65,7 +62,7 @@ export default function TeamPage() {
                                 <p className="text-gray-600 mb-3">{member.role}</p>
 
                                 <p className="text-gray-600 text-center mt-2 mb-4">
-                                        {member.program} • {member.year}
+                                        {member.program}{member.program && member.year ? ' • ' : ''}{member.year}
                                 </p>
                                 {/* <p className="text-sm text-gray-500 mb-4">{member.bio}</p> */}
                                 <div className="flex justify-center space-x-4">

@@ -6,9 +6,11 @@ import SocialIcon from '../common/SocialIcon';
 import { socialLinks } from '../common/Data';
 import { FaDiscord } from 'react-icons/fa';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     return (
         <div className="relative">
@@ -18,21 +20,27 @@ export default function Header() {
             
             <div className="relative z-10 flex items-center justify-between w-full px-12 py-8">
                 <div className="flex items-center space-x-4">
-                    <Link href="/">
+                    <Link href="/" className="flex items-center space-x-4 hover:opacity-80 transition-opacity">
                         <Image
                             src="/cublockchain1.ico"
                             alt="Logo"
                             width={50}
                             height={50}
-                            className="hover:opacity-80 transition-opacity"
                         />
+                        <div className="ml-2 flex-col md:flex hidden">
+                            <span className="text-xl font-bold text-[#4A4F8C]">
+                                Carleton<br/>Blockchain
+                            </span>
+                        </div>
                     </Link>
-                    <div className="ml-2 flex-col md:flex hidden">
-                        <Link href="/" className="text-xl font-bold text-[#4A4F8C] hover:opacity-80 transition-opacity">Carleton<br/>Blockchain</Link>
-                    </div>
                     <Link
                         href="/team"
-                        className="h-14 px-6 text-[#4A4F8C] transition hover:opacity-80 flex items-center justify-center md:flex hidden text-xl"
+                        className={`h-12 px-4 transition hover:opacity-80 flex items-center justify-center md:flex hidden text-xl ${
+                            pathname === '/team'
+                            ? 'text-[#4A4F8C] border-2 border-[#4A4F8C] rounded-md'
+                            : 'text-[#4A4F8C]'
+                        }`
+                    }
                     >
                         Team
                     </Link>
@@ -79,10 +87,14 @@ export default function Header() {
                     <div className="block px-4 py-2">
                         <Link
                             href="/team"
-                            className="h-10 px-6 text-[#4A4F8C] transition hover:opacity-80 flex items-center justify-center"
+                            className={`h-10 px-6 transition hover:opacity-80 flex items-center justify-center ${
+                                pathname === '/team' 
+                                ? 'bg-[#5865F2] text-white rounded-full' 
+                                : 'text-[#4A4F8C]'
+                            }`}
                             onClick={() => setIsMenuOpen(false)}
                         >
-                            Team_
+                            Team{pathname === '/team' ? '' : '_'}
                         </Link>
                     </div>
 
