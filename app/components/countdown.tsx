@@ -140,7 +140,7 @@ const Countdown = () => {
                             date="Nov 27, 2024" 
                             time="6:00 PM - 8:00 PM" 
                             location="Carleton University, Ottawa" 
-                            room="HP 5435" 
+                            room="HP 5345" 
                             onSignUp={() => window.open("https://lu.ma/l94aro7a", "_blank")} 
                         />
                     </div>
