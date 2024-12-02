@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface EventCardProps {
   title: string;
   date: string;
@@ -55,9 +57,11 @@ export function EventCard({ title = "First Event", date = "November 28, 2024", t
           {/* Flyer Image */}
           {flyerImage && (
             <div className="md:w-1/3 flex justify-center">
-              <img 
+              <Image 
                 src={flyerImage} 
                 alt={`Flyer for ${title}`}
+                width={400}
+                height={600}
                 className="w-3/4 md:w-full h-auto rounded-lg"
               />
             </div>

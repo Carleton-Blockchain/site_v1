@@ -14,9 +14,9 @@ import Marquee from 'react-fast-marquee';
 export default function Home() {
 
     const [openFaq, setOpenFaq] = useState<number | null>(null);
-    const countdownRef = useRef(null);
+    //const countdownRef = useRef(null);
     const faqRef = useRef(null);
-    const isCountdownInView = useInView(countdownRef, { once: true });
+    //const isCountdownInView = useInView(countdownRef, { once: true });
     const isFaqInView = useInView(faqRef, { once: true });
 
     return (
@@ -156,7 +156,7 @@ export default function Home() {
                                 }}
                                 className="text-gray-600 max-w-2xl"
                             >
-                                Carleton Blockchain wasn't started in a classroom, but from a shared vision. 
+                                Carleton Blockchain wasn&apos;t started in a classroom, but from a shared vision. 
                                 We, a group of passionate students, saw the need for a community that embraces 
                                 blockchain innovation, fosters learning, and builds the future of Web3 together.
                             </motion.p>
