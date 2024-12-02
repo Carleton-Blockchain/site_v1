@@ -14,9 +14,9 @@ export default function Header() {
 
     return (
         <div className="relative">
-            <div className="absolute inset-0 bg-white" />
+            <div className="absolute inset-0 bg-[#F5F7FC]" />
             
-            <div className="absolute inset-0 border-2 border-gray-300 rounded-full mx-6 my-4" />
+            <div className="absolute inset-0 bg-white border-2 border-gray-300 rounded-full mx-6 my-4" />
             
             <div className="relative z-10 flex items-center justify-between w-full px-12 py-8">
                 <div className="flex items-center space-x-4">
@@ -35,7 +35,7 @@ export default function Header() {
                     </Link>
                     <Link
                         href="/team"
-                        className={`h-12 px-4 transition hover:opacity-80 flex items-center justify-center text-xl md:flex hidden ${
+                        className={`h-12 px-4 transition hover:opacity-80 flex items-center justify-center text-lg md:flex hidden ${
                             pathname === '/team'
                             ? 'text-[#4A4F8C] border-2 border-[#4A4F8C] rounded-md'
                             : 'text-[#4A4F8C]'
@@ -87,7 +87,7 @@ export default function Header() {
                     <div className="block px-4 py-2">
                         <Link
                             href="/team"
-                            className={`h-12 px-4 transition hover:opacity-80 flex items-center justify-center text-xl ${
+                            className={`h-12 px-4 transition hover:opacity-80 flex items-center justify-center text-lg md:flex hidden ${
                                 pathname === '/team'
                                 ? 'text-[#4A4F8C] border-2 border-[#4A4F8C] rounded-md'
                                 : 'text-[#4A4F8C]'

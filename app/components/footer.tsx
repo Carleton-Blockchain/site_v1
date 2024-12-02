@@ -23,9 +23,9 @@ export default function Footer() {
                 {/* Teams and Join Us Links */}
                 <div className="flex justify-center gap-8 mb-4">
                     <Link href="/team" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-                        Teams
+                        Team
                     </Link>
-                    <Link href="https://simplistic-character-5e4.notion.site/Carleton-Blockchain-Recruiting-14bf02539b1f8052ac89c3130c8d37f1?pvs=73" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                    <Link href="x" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
                         Join Us
                     </Link>
                 </div>
