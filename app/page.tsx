@@ -7,7 +7,7 @@ import FAQ from './components/faq';
 import Header from './components/header';
 import { motion, useInView } from 'framer-motion';
 import { faqs } from './common/Data';
-import Marquee from 'react-fast-marquee';
+import Marquee from 'react-fast-marquee'; 
 
 
 
