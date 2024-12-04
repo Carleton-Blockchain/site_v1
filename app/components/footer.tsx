@@ -8,7 +8,7 @@ export default function Footer() {
         <div>
             <footer className="w-full bg-[#F5F7FC] py-12 px-8">
                 {/* Logo Section */}
-                <div className="flex items-center justify-center mb-8">
+                <div className="flex flex-col items-center justify-center mb-8">
                     <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
                         <Image
                             src="/cublockchain1.ico"
@@ -18,6 +18,18 @@ export default function Footer() {
                         />
                         <span className="ml-3 text-xl font-bold text-gray-800">Carleton Blockchain</span>
                     </Link>
+                    <div className="flex items-center mt-2">
+                        <span className="text-sm text-gray-500">Backed by</span>
+                        <Link href="https://collegedao.io/" target="_blank" rel="noopener noreferrer" className="flex items-center hover:opacity-80 transition-opacity">
+                            <Image
+                                src="/sponsors/cdao1.png"
+                                alt="College DAO Logo"
+                                width={24}
+                                height={24}
+                                className="ml-2"
+                            />
+                        </Link>
+                    </div>
                 </div>
 
                 {/* Teams and Join Us Links */}
