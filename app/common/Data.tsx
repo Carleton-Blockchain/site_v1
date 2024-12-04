@@ -75,6 +75,23 @@ export const socialLinks = [
       linkedin: 'https://www.linkedin.com/in/karimsaadeh/',
       x: 'https://x.com/CrabMan_eth',
       website: 'https://dot.cards/karimsaadeh'
+    },
+    {
+      name: 'Ryan Zhu',
+      role: 'Web Dev',
+      program: 'Computer Science',
+      year: '2nd Year',
+      image: '/pfp/ryan.webp',
+      linkedin: 'https://www.linkedin.com/in/ryanzhu917/',
+      website: 'https://ryanzhu.dev/'
+    },
+    {
+      name: 'Shivam Karavadra',
+      role: 'Web Dev',
+      program: 'Computer Science',
+      year: '3rd year',
+      image: '/pfp/shivam.webp',
+      linkedin: 'https://www.linkedin.com/in/shivam-karavadra-64986621a/',
     }
   ];
 
