@@ -71,6 +71,7 @@ export const socialLinks = [
       name: 'Karim Saadeh',
       role: 'Advisor',
       year: 'Alumni',
+      program: 'Unblocked Consulting',
       image: '/pfp/karim.webp',
       linkedin: 'https://www.linkedin.com/in/karimsaadeh/',
       x: 'https://x.com/CrabMan_eth',
