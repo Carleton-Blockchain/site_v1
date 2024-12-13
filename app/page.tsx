@@ -72,6 +72,7 @@ export default function Home() {
                                 ease: [0.215, 0.610, 0.355, 1.000],
                                 delay: 0.3
                             }}
+                            //onClick={()=>(console.log(process.env.NEXT_PUBLIC_SUPABASE_URL))}
                             href="https://lu.ma/carletonblockchain"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -207,7 +208,7 @@ export default function Home() {
 
                 <div className="h-12"></div>
 
-                <Marquee className="overflow-hidden" speed={40} gradient={true} gradientWidth={50} gradientColor="white" pauseOnHover={true} autoFill={true}>
+                <Marquee className="overflow-hidden" speed={40} gradient={true} gradientWidth={50} gradientColor="white" autoFill={true}>
                     <div className="flex gap-4 mx-4">
                         <motion.div
                             initial={{ opacity: 0 }}

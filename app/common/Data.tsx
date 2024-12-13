@@ -31,7 +31,7 @@ export const socialLinks = [
  export const teamMembers = [
     {
       name: 'Rodney Shen',
-      role: 'Co-Founder - President',
+      role: 'Founder',
       program: 'Computer Science',
       year: '3rd Year',
       image: '/pfp/rodney.webp',
@@ -40,32 +40,30 @@ export const socialLinks = [
       website: 'https://rodneyshen.netlify.app'
     },
     {
-      name: 'Eshan Betrabet',
-      role: 'Co-Founder',
-      program: 'Cognitive Science',
-      year: '3rd Year',
-      image: '/pfp/eshan.webp',
-      linkedin: 'https://www.linkedin.com/in/eshan-betrabet/',
-      x: 'https://x.com/eshanbetrabet',
-      website: 'https://eshanb.com'
-    },
-    {
-      name: 'Cedric Osagie',
-      role: 'Co-Founder',
-      program: 'Commerce',
-      year: 'Alumni',
-      image: '/pfp/cedric.webp',
-      linkedin: 'https://www.linkedin.com/in/cedric-osagie/',
-      x: 'https://x.com/CedricOsagie'
-    },
-    {
       name: 'Ansh Kakkar',
-      role: 'Web Dev',
+      role: 'Developer',
       program: 'Computer Science',
       year: '2nd Year',
       image: '/pfp/ansh.webp',
       linkedin: 'https://www.linkedin.com/in/ansh-kakkar/',
       website: 'https://www.anshkakkar.dev/'
+    },
+    {
+      name: 'Ryan Zhu',
+      role: 'Developer',
+      program: 'Computer Science',
+      year: '2nd Year',
+      image: '/pfp/ryan.webp',
+      linkedin: 'https://www.linkedin.com/in/ryanzhu917/',
+      website: 'https://ryanzhu.dev/'
+    },
+    {
+      name: 'Shivam Karavadra',
+      role: 'Developer',
+      program: 'Computer Science',
+      year: '3rd year',
+      image: '/pfp/shivam.webp',
+      linkedin: 'https://www.linkedin.com/in/shivam-karavadra-64986621a/',
     },
     {
       name: 'Karim Saadeh',
@@ -77,23 +75,6 @@ export const socialLinks = [
       x: 'https://x.com/CrabMan_eth',
       website: 'https://dot.cards/karimsaadeh'
     },
-    {
-      name: 'Ryan Zhu',
-      role: 'Web Dev',
-      program: 'Computer Science',
-      year: '2nd Year',
-      image: '/pfp/ryan.webp',
-      linkedin: 'https://www.linkedin.com/in/ryanzhu917/',
-      website: 'https://ryanzhu.dev/'
-    },
-    {
-      name: 'Shivam Karavadra',
-      role: 'Web Dev',
-      program: 'Computer Science',
-      year: '3rd year',
-      image: '/pfp/shivam.webp',
-      linkedin: 'https://www.linkedin.com/in/shivam-karavadra-64986621a/',
-    }
   ];
 
  export const faqs = [
