@@ -72,7 +72,6 @@ export default function Home() {
                                 ease: [0.215, 0.610, 0.355, 1.000],
                                 delay: 0.3
                             }}
-                            //onClick={()=>(console.log(process.env.NEXT_PUBLIC_SUPABASE_URL))}
                             href="https://lu.ma/carletonblockchain"
                             target="_blank"
                             rel="noopener noreferrer"

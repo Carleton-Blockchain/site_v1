@@ -9,6 +9,9 @@
     "lint": "next lint",
     "reset": "git clean -fdX -e '!**/.env*'; pnpm i"
   },
+  "engines": {
+    "node": ">=20.0.0 <=22.11.0"
+  },
   "dependencies": {
     "framer-motion": "^11.11.17",
     "next": "15.0.2",
