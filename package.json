@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "reset": "git clean -fdX -e '!**/.env*'; pnpm i"
   },
   "dependencies": {
     "framer-motion": "^11.11.17",
