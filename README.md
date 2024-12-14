@@ -1,10 +1,15 @@
 ## Getting Started
 
-First, run the development server:
 
-```bash
-npm install
+Install packages:
+```sh
 npm run dev
+```
+
+Run development server:
+
+```sh
+npm install
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -27,7 +32,7 @@ git branch <FEATURE_NAME>
 git switch <FEATURE_NAME>
 ```
 
-Commiting your work:
+Committing your work:
 
 ```
 git add .
@@ -37,11 +42,10 @@ git commit -m "<feature spec>"
 git push --set-upstream origin <FEATURE_NAME>
 ```
 
+
+Resetting workspace and clean installing all packages:
+```sh
+npm reset
+```
+
 This way, we can stay organized and reduce amount of merge conflicts!🤓
-
-
-
-
-
-
-
