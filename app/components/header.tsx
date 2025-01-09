@@ -33,17 +33,6 @@ export default function Header() {
                             </span>
                         </div>
                     </Link>
-                    <Link
-                        href="/team"
-                        className={`h-12 px-4 transition hover:opacity-80 flex items-center justify-center text-lg md:flex hidden ${
-                            pathname === '/team'
-                            ? 'text-[#4A4F8C] border-2 border-[#4A4F8C] rounded-md'
-                            : 'text-[#4A4F8C]'
-                        }`}
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        Team
-                    </Link>
                 </div>
                 <div className="flex items-center space-x-4">
                     <div className="flex gap-4 mr-12 py-4 md:flex hidden">

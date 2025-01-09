@@ -28,13 +28,13 @@ export const socialLinks = [
     },
   ];
 
- export const teamMembers = [
+ export const teamData = [
     {
       name: 'Rodney Shen',
       role: 'Founder',
       program: 'Computer Science',
       year: '3rd Year',
-      image: '/pfp/rodney.webp',
+      image: '/pfp/rodney.jpg',
       linkedin: 'https://www.linkedin.com/in/rodneyshenn/',
       x: 'https://x.com/992rodney',
       website: 'https://rodneyshen.netlify.app'
@@ -44,7 +44,7 @@ export const socialLinks = [
       role: 'Developer',
       program: 'Computer Science',
       year: '2nd Year',
-      image: '/pfp/ansh.webp',
+      image: '/pfp/ansh.jpeg',
       linkedin: 'https://www.linkedin.com/in/ansh-kakkar/',
       website: 'https://www.anshkakkar.dev/'
     },
@@ -53,7 +53,7 @@ export const socialLinks = [
       role: 'Developer',
       program: 'Computer Science',
       year: '2nd Year',
-      image: '/pfp/ryan.webp',
+      image: '/pfp/ryan.jpg',
       linkedin: 'https://www.linkedin.com/in/ryanzhu917/',
       website: 'https://ryanzhu.dev/'
     },
@@ -103,3 +103,14 @@ export const socialLinks = [
         answer: "No."
     },
   ];
+
+export interface TeamMember {
+    name: string;
+    role: string;
+    image: string;
+    program?: string;
+    year?: string;
+    linkedin?: string;
+    x?: string;
+    website?: string;
+  }

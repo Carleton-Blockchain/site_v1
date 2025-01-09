@@ -6,8 +6,10 @@ import Footer from './components/footer';
 import FAQ from './components/faq';
 import Header from './components/header';
 import { motion, useInView } from 'framer-motion';
-import { faqs } from './common/Data';
+import { faqs, teamData, TeamMember } from './common/Data';
 import Marquee from 'react-fast-marquee'; 
+import { FaLinkedin} from 'react-icons/fa';
+import SocialIcon from './common/SocialIcon';
 
 
 
@@ -175,7 +177,6 @@ export default function Home() {
                         >
                             <div className="space-y-8 max-w-sm">
                                 {[
-                                    { value: "$500+", text: "raised for events" },
                                     { value: "250+", text: "followers on socials" },
                                     { value: "3+", text: "industry partners" },
                                     { value: "1", text: "event hosted" },
@@ -205,7 +206,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="h-12"></div>
+                <div className="h-12"></div>    
 
                 <Marquee className="overflow-hidden" speed={40} gradient={true} gradientWidth={50} gradientColor="white" autoFill={true}>
                     <div className="flex gap-4 mx-4">
@@ -248,7 +249,86 @@ export default function Home() {
                 </Marquee>
 
 
-                <div className="h-24"></div>
+                <div className="h-32"></div>
+
+
+
+                <div className="flex flex-col items-center space-y-8 px-4 max-w-7xl mx-auto">
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                            duration: 0.7,
+                            ease: [0.215, 0.610, 0.355, 1.000],
+                            delay: 0.2
+                        }}
+                        className="text-4xl md:text-5xl font-light text-[#1E3A2F] text-center"
+                    >
+                        Meet Our Team
+                    </motion.h2>
+
+                    <div className="h-2"></div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-8 w-full">
+                        {teamData.map((member: TeamMember, index: number) => (
+                            <motion.div 
+                                key={member.name}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ 
+                                    duration: 0.5, 
+                                    ease: "easeOut",
+                                    delay: index * 0.1
+                                }}
+                                className="text-center"
+                            >
+                                <div className="aspect-square mb-4 md:mb-6 overflow-hidden rounded-full w-24 md:w-32 mx-auto">
+                                    <Image
+                                        src={member.image}
+                                        alt={member.name}
+                                        width={80}
+                                        height={80}
+                                        className="object-cover w-full h-full"
+                                    />
+                                </div>
+                                <h3 className="text-base md:text-lg font-semibold mb-1 text-black">{member.name}</h3>
+                                <p className="text-xs md:text-sm text-gray-600 mb-2">{member.role}</p>
+                                <p className="text-xs md:text-sm text-gray-600 mb-3">
+                                    {member.program}{member.program && member.year ? ' • ' : ''}{member.year}
+                                </p>
+                                <div className="flex justify-center space-x-4">
+                                    {member.linkedin && (
+                                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                                            <FaLinkedin className="w-5 h-5 text-gray-600 hover:text-gray-800" />
+                                        </a>
+                                    )}
+                                    {member.x && (
+                                        <a href={member.x} target="_blank" rel="noopener noreferrer">
+                                            <svg width="20" height="20" viewBox="0 0 20 22" fill="currentColor" className="text-gray-600 hover:text-gray-800">
+                                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                            </svg>
+                                        </a>
+                                    )}
+                                   {member.website && (
+                                            <SocialIcon
+                                                href={member.website}
+                                                icon={() => (
+                                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                                                    </svg>
+                                                )}
+                                                label="Website"
+                                            />
+                                        )}
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="h-32"></div>
 
                 <motion.div 
                     ref={faqRef}
