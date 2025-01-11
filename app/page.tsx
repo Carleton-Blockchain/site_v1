@@ -210,41 +210,34 @@ export default function Home() {
 
                 <Marquee className="overflow-hidden" speed={40} gradient={true} gradientWidth={50} gradientColor="white" autoFill={true}>
                     <div className="flex gap-4 mx-4">
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true, amount: 0.5 }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
-                        >
-                            <Image src="/marquees/karimspeak.webp" alt="Marquee Image 2" width={250} height={167} className="rounded-lg" />
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true, amount: 0.5 }}
-                            transition={{ duration: 0.5, delay: 0.4 }}
-                        >
-                            <Image src="/marquees/anshryan.webp" alt="Marquee Image 1" width={250} height={167} className="rounded-lg" />
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true, amount: 0.5 }}
-                            transition={{ duration: 0.5, delay: 0.6 }}
-                        >
-                            <Image src="/marquees/karims.webp" alt="Marquee Image 1" width={250} height={167} className="rounded-lg" />
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true, amount: 0.5 }}
-                            transition={{ duration: 0.5, delay: 0.8}}
-                        >
-                            <Image src="/marquees/signin.webp" alt="Marquee Image 4" width={250} height={167} className="rounded-lg" />
-                        </motion.div>
-
+                        {[
+                            { src: "/marquees/karimspeak.png", alt: "Karim Speaking" },
+                            { src: "/marquees/anshryan.webp", alt: "Ansh and Ryan" },
+                            { src: "/marquees/yap.png", alt: "YAP Event" },
+                            { src: "/marquees/karims.webp", alt: "Karim's Presentation" },
+                            { src: "/marquees/pat.png", alt: "Pat" },
+                            { src: "/marquees/signin.webp", alt: "Sign In" },
+                            { src: "/marquees/group.png", alt: "Group Photo" }
+                        ].map((image, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true, amount: 0.5 }}
+                                transition={{ duration: 0.5, delay: 0.2 + (index * 0.2) }}
+                                className="w-[250px] h-[167px]"
+                            >
+                                <Image 
+                                    src={image.src} 
+                                    alt={image.alt} 
+                                    width={200} 
+                                    height={150} 
+                                    quality={100}
+                                    className="rounded-lg object-cover w-full h-full"
+                                    priority={index < 2}
+                                />
+                            </motion.div>
+                        ))}
                     </div>
                 </Marquee>
 
@@ -288,8 +281,8 @@ export default function Home() {
                                     <Image
                                         src={member.image}
                                         alt={member.name}
-                                        width={80}
-                                        height={80}
+                                        width={128}
+                                        height={128}
                                         className="object-cover w-full h-full"
                                     />
                                 </div>
