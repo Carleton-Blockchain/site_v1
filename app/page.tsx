@@ -177,9 +177,9 @@ export default function Home() {
                         >
                             <div className="space-y-8 max-w-sm">
                                 {[
-                                    { value: "250+", text: "followers on socials" },
+                                    { value: "83", text: "club members" },
                                     { value: "3+", text: "industry partners" },
-                                    { value: "1", text: "event hosted" },
+                                    { value: "2", text: "event hosted" },
                                     { 
                                         value: Math.floor((new Date().getTime() - new Date('2024-11-01').getTime()) / (1000 * 60 * 60 * 24)),
                                         text: "days of operation"
