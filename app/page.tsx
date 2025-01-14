@@ -64,7 +64,7 @@ export default function Home() {
             </motion.main>
         
                 <div className="flex flex-col items-center justify-center flex-1">
-                    <div className="flex flex-col md:flex-row gap-6 px-4 w-full md:w-auto">
+                    <div className="w-[80%] flex flex-col md:flex-row gap-6 px-4 w-full md:w-auto">
                         <motion.a
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -97,7 +97,7 @@ export default function Home() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="h-12 w-full md:w-48 rounded-md bg-[#4A4F8C] text-neutral-50 transition hover:bg-[#7B89B8] flex items-center justify-center"
-                        >
+                            >
                             <span className="flex items-center gap-2 px-4">
                                 <FaDiscord size={24} />
                                 <span>Join Discord</span>
