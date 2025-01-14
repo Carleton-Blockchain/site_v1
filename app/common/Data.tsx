@@ -107,10 +107,12 @@ export const socialLinks = [
 export interface TeamMember {
     name: string;
     role: string;
-    image: string;
-    program?: string;
-    year?: string;
-    linkedin?: string;
-    x?: string;
+    avatar: {
+      url: string;
+    };
+    major?: string;
+    year?: number;
+    linkedIn?: string;
+    xtwitter?: string;
     website?: string;
   }

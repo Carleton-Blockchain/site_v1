@@ -1,26 +1,64 @@
 "use client";
 import Image from 'next/image';
-import {FaDiscord } from 'react-icons/fa';
-import {useState, useRef } from 'react';
+import { FaDiscord } from 'react-icons/fa';
+import { useState, useRef, useEffect } from 'react';
 import Footer from './components/footer';
 import FAQ from './components/faq';
 import Header from './components/header';
 import { motion, useInView } from 'framer-motion';
-import { faqs, teamData, TeamMember } from './common/Data';
+import { faqs, TeamMember } from './common/Data';
 import Marquee from 'react-fast-marquee'; 
-import { FaLinkedin} from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 import SocialIcon from './common/SocialIcon';
-
-
+import fetchGraphQL from './utils/contentfulClient';
 
 export default function Home() {
-
+    const [teamMembers, setTeam] = useState([]);
+    const [marqueeImages, setMarquee] = useState([]);
+    const QUERY = `query{
+     homeMarqueeCollection{
+        items{
+        marqueeImagesCollection{
+            items{
+            url(transform:{width:500 format:WEBP quality:80})
+            }
+        }
+        }
+    }
+    teamMemberCollection{
+        items{
+        name
+        role
+        avatar{
+            url(transform:{width:384 height:384 format:AVIF})
+        }
+        linkedIn
+        website
+        xtwitter
+        major
+        year
+            
+        }
+        }
+    }`
+    useEffect(() => {
+        fetchGraphQL(QUERY)
+        .then((data) => {
+            setTeam(data.teamMemberCollection.items);
+            setMarquee(data.homeMarqueeCollection.items[0].marqueeImagesCollection.items);
+        })
+        .catch((error) => {
+            console.error('Error fetching data:', error);
+        });
+    }, []);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     //const countdownRef = useRef(null);
     const faqRef = useRef(null);
     //const isCountdownInView = useInView(countdownRef, { once: true });
     const isFaqInView = useInView(faqRef, { once: true });
-
+    interface ImageSchema{
+        url: string;
+    }
     return (
         <div className="min-h-screen flex flex-col relative">
             <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:3rem_3rem]">
@@ -210,15 +248,7 @@ export default function Home() {
 
                 <Marquee className="overflow-hidden" speed={40} gradient={true} gradientWidth={50} gradientColor="white" autoFill={true}>
                     <div className="flex gap-4 mx-4">
-                        {[
-                            { src: "/marquees/karimspeak.png", alt: "Karim Speaking" },
-                            { src: "/marquees/anshryan.webp", alt: "Ansh and Ryan" },
-                            { src: "/marquees/yap.png", alt: "YAP Event" },
-                            { src: "/marquees/karims.webp", alt: "Karim's Presentation" },
-                            { src: "/marquees/pat.png", alt: "Pat" },
-                            { src: "/marquees/signin.webp", alt: "Sign In" },
-                            { src: "/marquees/group.png", alt: "Group Photo" }
-                        ].map((image, index) => (
+                        {marqueeImages.map((image : ImageSchema, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0 }}
@@ -227,14 +257,10 @@ export default function Home() {
                                 transition={{ duration: 0.5, delay: 0.2 + (index * 0.2) }}
                                 className="w-[250px] h-[167px]"
                             >
-                                <Image 
-                                    src={image.src} 
-                                    alt={image.alt} 
-                                    width={200} 
-                                    height={150} 
-                                    quality={100}
+                                <img 
+                                    src={image.url}
                                     className="rounded-lg object-cover w-full h-full"
-                                    priority={index < 2}
+                                    alt="Marquee Image"
                                 />
                             </motion.div>
                         ))}
@@ -264,7 +290,7 @@ export default function Home() {
                     <div className="h-2"></div>
 
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-8 w-full">
-                        {teamData.map((member: TeamMember, index: number) => (
+                        {teamMembers.map((member: TeamMember, index: number) => (
                             <motion.div 
                                 key={member.name}
                                 initial={{ opacity: 0, y: 20 }}
@@ -278,8 +304,8 @@ export default function Home() {
                                 className="text-center"
                             >
                                 <div className="aspect-square mb-4 md:mb-6 overflow-hidden rounded-full w-24 md:w-32 mx-auto">
-                                    <Image
-                                        src={member.image}
+                                    <img
+                                        src={member.avatar.url}
                                         alt={member.name}
                                         width={128}
                                         height={128}
@@ -289,16 +315,16 @@ export default function Home() {
                                 <h3 className="text-base md:text-lg font-semibold mb-1 text-black">{member.name}</h3>
                                 <p className="text-xs md:text-sm text-gray-600 mb-2">{member.role}</p>
                                 <p className="text-xs md:text-sm text-gray-600 mb-3">
-                                    {member.program}{member.program && member.year ? ' • ' : ''}{member.year}
+                                    {member.major}{member.major && member.year != null ? ' • ' : ''}{member.year == 0 ? "Alumni" : member.year == 1 ? "1st Year" : member.year == 2 ? "2nd Year" : member.year == 3 ? "3rd Year" : member.year == 4 ? "4th Year" : "5th Year"}  
                                 </p>
                                 <div className="flex justify-center space-x-4">
-                                    {member.linkedin && (
-                                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                                    {member.linkedIn && (
+                                        <a href={member.linkedIn} target="_blank" rel="noopener noreferrer">
                                             <FaLinkedin className="w-5 h-5 text-gray-600 hover:text-gray-800" />
                                         </a>
                                     )}
-                                    {member.x && (
-                                        <a href={member.x} target="_blank" rel="noopener noreferrer">
+                                    {member.xtwitter && (
+                                        <a href={member.xtwitter} target="_blank" rel="noopener noreferrer">
                                             <svg width="20" height="20" viewBox="0 0 20 22" fill="currentColor" className="text-gray-600 hover:text-gray-800">
                                                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                                             </svg>
