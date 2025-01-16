@@ -2,6 +2,9 @@
 import Image from "next/image";
 import { FaDiscord, FaLinkedin } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react";
+
+import { TeamMemberSchema, ImageSchema, MetricSchema, QuestionSchema, PosterSchema } from "./common/Data";
+
 import Footer from "./components/footer";
 import FAQ from "./components/faq";
 import Header from "./components/header";
@@ -9,55 +12,53 @@ import { motion, useInView } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import SocialIcon from "./common/SocialIcon";
 import fetchGraphQL from "./utils/contentfulClient";
+import PosterGallery from "./components/posterGallery";
 
-interface ImageSchema {
-  url: string;
-}
-
-interface MetricSchema {
-  metricName: string;
-  metricDataText: string | number;
-}
-
-interface QuestionSchema {
-  question: string;
-  answer: any;
-}
-
-interface TeamMemberSchema {
-  name: string;
-  role: string;
-  avatar: {
-    url: string;
-  };
-  linkedIn?: string;
-  website?: string;
-  xtwitter?: string;
-  major?: string;
-  year?: number;
-}
 
 export default function Home() {
   const [teamMembers, setTeam] = useState<TeamMemberSchema[]>([]);
   const [marqueeImages, setMarquee] = useState<ImageSchema[]>([]);
   const [metricData, setMetricData] = useState<MetricSchema[]>([]);
   const [faqQuestionsData, setFaqQuestions] = useState<QuestionSchema[]>([]);
-  const QUERY = `query {
-    
+  const [eventPosters, setPosters] = useState<PosterSchema[]>([]);
+  const QUERY = `query {    
+    eventPosterCollection{
+      items{
+        date
+        title
+        description
+        image{
+          url
+          alt:description
+        }
+        onClickLink
+      }
+    }
     faqQuestionCollection(order:sys_publishedAt_ASC){
         items{
-        question
-        answer{
-            json
-        }
+          question
+          answer{
+              json
+          }
         }
     }
-    
+    eventPosterCollection{
+      items{
+        date
+        title
+        description
+        image{
+          url
+          alt:description
+        }
+        onClickLink
+      }
+    }
     homeMarqueeCollection(limit: 1) {
       items {
         marqueeImagesCollection {
           items {
-            url(transform: { width: 500, format: WEBP, quality: 80 })
+            url(transform: { width: 500, format: AVIF, quality: 50 })
           }
         }
       }
@@ -101,6 +102,7 @@ export default function Home() {
             .items as MetricSchema[]
         );
         setFaqQuestions(data.faqQuestionCollection.items as QuestionSchema[]);
+        setPosters(data.eventPosterCollection.items as PosterSchema[]);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -470,6 +472,24 @@ export default function Home() {
             />
           ))}
       </motion.div>
+      <div className="flex flex-col items-center">
+        <div className="flex justify-center pt-20 pb-12 gap-8 w-10/12 *:flex *:flex-col *:items-center *:px-20 *:py-8 *:bg-neutral-100 *:w-1/2 *:rounded-3xl *:border-2 *:border-solid *:border-neutral-300">
+          <div className=" min-h-full">
+            <img src="https://placehold.co/400x400" alt="placeholder icon" height={50} width={50}/>
+            <div className=" font-medium py-6 text-sm">Coming Events</div>
+            <div className=" font-light text-md">Blockchain is known for moving fast. Yappity yap yap idk what to put. Here is a list of our latest events at Carleton Blockchain</div>
+          </div>
+          <div className=" min-h-full">
+            <img src="https://placehold.co/400x400" alt="placeholder icon" height={50} width={50}/>
+            <div className=" font-medium py-6 text-sm">Past Events</div>
+            <div className=" font-light text-md">Blockchain is known for moving fast. Yappity yap yap idk what to put. Here is a list of our past events at Carleton Blockchain</div>
+          </div>
+        </div>
+        <div className="w-full flex justify-center">
+          <PosterGallery posters={eventPosters} />
+        </div>
+        
+      </div>
 
       <div className="flex justify-center mt-8 mb-8 pt-10">
         <button className="group relative">

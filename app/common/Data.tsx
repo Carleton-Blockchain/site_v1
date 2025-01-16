@@ -27,3 +27,35 @@ export const socialLinks = [
     label: "Discord",
   },
 ];
+
+export interface ImageSchema {
+  url: string;
+  alt?:string;
+}
+export interface PosterSchema {
+  title: string;
+  description: string;
+  onClickLink?: string;
+  image:ImageSchema;
+  date: Date;
+}
+export interface MetricSchema {
+  metricName: string;
+  metricDataText: string | number;
+}
+
+export interface QuestionSchema {
+  question: string;
+  answer: any;
+}
+
+export interface TeamMemberSchema {
+  name: string;
+  role: string;
+  avatar: ImageSchema;
+  linkedIn?: string;
+  website?: string;
+  xtwitter?: string;
+  major?: string;
+  year?: number;
+}
