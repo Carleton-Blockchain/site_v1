@@ -3,7 +3,13 @@ import Image from "next/image";
 import { FaDiscord, FaLinkedin } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react";
 
-import { TeamMemberSchema, ImageSchema, MetricSchema, QuestionSchema, PosterSchema } from "./common/Data";
+import {
+  TeamMemberSchema,
+  ImageSchema,
+  MetricSchema,
+  QuestionSchema,
+  PosterSchema,
+} from "./common/Data";
 
 import Footer from "./components/footer";
 import FAQ from "./components/faq";
@@ -13,7 +19,6 @@ import Marquee from "react-fast-marquee";
 import SocialIcon from "./common/SocialIcon";
 import fetchGraphQL from "./utils/contentfulClient";
 import PosterGallery from "./components/posterGallery";
-
 
 export default function Home() {
   const [teamMembers, setTeam] = useState<TeamMemberSchema[]>([]);
@@ -102,7 +107,19 @@ export default function Home() {
             .items as MetricSchema[]
         );
         setFaqQuestions(data.faqQuestionCollection.items as QuestionSchema[]);
-        setPosters(data.eventPosterCollection.items as PosterSchema[]);
+        setPosters(
+          [
+            ...data.eventPosterCollection.items,
+            ...data.eventPosterCollection.items,
+            ...data.eventPosterCollection.items,
+          ]
+            .slice()
+            .sort((a: PosterSchema, b: PosterSchema) => {
+              const dateA = new Date(a.date).getTime();
+              const dateB = new Date(b.date).getTime();
+              return dateA - dateB;
+            })
+        );
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -474,21 +491,47 @@ export default function Home() {
       </motion.div>
       <div className="flex flex-col items-center">
         <div className="flex justify-center pt-20 pb-12 gap-8 w-10/12 *:flex *:flex-col *:items-center *:px-20 *:py-8 *:bg-neutral-100 *:w-1/2 *:rounded-3xl *:border-2 *:border-solid *:border-neutral-300">
-          <div className=" min-h-full">
-            <img src="https://placehold.co/400x400" alt="placeholder icon" height={50} width={50}/>
-            <div className=" font-medium py-6 text-sm">Coming Events</div>
-            <div className=" font-light text-md">Blockchain is known for moving fast. Yappity yap yap idk what to put. Here is a list of our latest events at Carleton Blockchain</div>
-          </div>
-          <div className=" min-h-full">
-            <img src="https://placehold.co/400x400" alt="placeholder icon" height={50} width={50}/>
-            <div className=" font-medium py-6 text-sm">Past Events</div>
-            <div className=" font-light text-md">Blockchain is known for moving fast. Yappity yap yap idk what to put. Here is a list of our past events at Carleton Blockchain</div>
+          <button className=" min-h-full">
+            <img
+              src="https://placehold.co/400x400"
+              alt="placeholder icon"
+              height={50}
+              width={50}
+            />
+            <div className=" font-medium py-6 text-sm text-neutral-800">
+              Coming Events
+            </div>
+            <div className=" font-light text-md text-neutral-600">
+              Blockchain is known for moving fast. Yappity yap yap idk what to
+              put. Here is a list of our latest events at Carleton Blockchain
+            </div>
+          </button>
+          <div className=" min-h-full ">
+            <img
+              src="https://placehold.co/400x400"
+              alt="placeholder icon"
+              height={50}
+              width={50}
+            />
+            <div className=" font-medium py-6 text-sm text-neutral-800">
+              Past Events
+            </div>
+            <div className="font-light text-md text-neutral-600">
+              Blockchain is known for moving fast. Yappity yap yap idk what to
+              put. Here is a list of our past events at Carleton Blockchain
+            </div>
           </div>
         </div>
-        <div className="w-full flex justify-center">
-          <PosterGallery posters={eventPosters} />
+        <div className="p-4 bg-white border border-solid border-neutral-200 drop-shadow-lg w-fit rounded-xl">
+          {Array(Math.ceil(eventPosters.length / 5))
+            .fill(1)
+            .map((_, iter) => (
+              <PosterGallery
+                posters={eventPosters.slice(iter * 5, (iter + 1) * 5)}
+                key={iter}
+              />
+            ))}
         </div>
-        
       </div>
 
       <div className="flex justify-center mt-8 mb-8 pt-10">

@@ -30,14 +30,14 @@ export const socialLinks = [
 
 export interface ImageSchema {
   url: string;
-  alt?:string;
+  alt?: string;
 }
 export interface PosterSchema {
   title: string;
   description: string;
   onClickLink?: string;
-  image:ImageSchema;
-  date: Date;
+  image: ImageSchema;
+  date: string;
 }
 export interface MetricSchema {
   metricName: string;
