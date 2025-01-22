@@ -44,8 +44,10 @@ const PosterGallery = ({ posters }: GalleryProps) => {
       }}
     >
       {posters.map((poster, index) => (
-        <div
+        <a
           key={index}
+          href={poster.onClickLink ? poster.onClickLink : ""}
+          target="_blank"
           className={`drop-shadow-lg hover:text-white hover:brightness-100 text-white brightness-100 group-hover:brightness-50 group-hover:text-transparent group-hover:hover:text-white group-hover:hover:brightness-100 rounded-2xl transform-gpu flex-1 hover:flex-[2] transition-all duration-300 ease-in-out`}
         >
           <div className="bg-gradient-to-t from-black/50 to-transparent p-3 flex flex-col text-wrap justify-end h-full rounded-2xl absolute inset-0 bg-transparent z-10 overflow-clip font-semibold">
@@ -56,15 +58,15 @@ const PosterGallery = ({ posters }: GalleryProps) => {
               <div>{poster.title}</div>
             </div>
           </div>
-          <div className="h-full transition-all duration-100 ease-in-out">
-            <img
-              className="h-full object-cover w-full  rounded-2xl"
-              loading="lazy"
-              src={poster.image.url}
-              alt={poster.image.alt || ""}
-            />
-          </div>
-        </div>
+            <div className="h-full transition-all duration-100 ease-in-out">
+              <img
+                className="h-full object-cover w-full  rounded-2xl"
+                loading="lazy"
+                src={poster.image.url}
+                alt={poster.image.alt || ""}
+              />
+            </div>
+        </a>
       ))}
     </div>
   );
