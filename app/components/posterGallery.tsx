@@ -1,6 +1,5 @@
 import React from "react";
 import { PosterSchema } from "../common/Data";
-import Image from "next/image";
 interface GalleryProps {
   posters: PosterSchema[];
 }
@@ -58,14 +57,14 @@ const PosterGallery = ({ posters }: GalleryProps) => {
               <div>{poster.title}</div>
             </div>
           </div>
-            <div className="h-full transition-all duration-100 ease-in-out">
-              <img
-                className="h-full object-cover w-full  rounded-2xl"
-                loading="lazy"
-                src={poster.image.url}
-                alt={poster.image.alt || ""}
-              />
-            </div>
+          <div className="h-full transition-all duration-100 ease-in-out">
+            <img
+              className="h-full object-cover w-full  rounded-2xl"
+              loading="lazy"
+              src={poster.image.url}
+              alt={poster.image.alt || ""}
+            />
+          </div>
         </a>
       ))}
     </div>
