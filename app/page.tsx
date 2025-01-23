@@ -27,7 +27,8 @@ export default function Home() {
   const [metricData, setMetricData] = useState<MetricSchema[]>([]);
   const [faqQuestionsData, setFaqQuestions] = useState<QuestionSchema[]>([]);
   const [eventPosters, setPosters] = useState<PosterSchema[]>([]);
-  const [showingFuturePosters, setShowingFuturePosters] = useState<boolean>(true);
+  const [showingFuturePosters, setShowingFuturePosters] =
+    useState<boolean>(true);
   const QUERY = `query {    
     eventPosterCollection{
       items{
@@ -95,7 +96,7 @@ export default function Home() {
       }
     }
   }`;
-  
+
   useEffect(() => {
     fetchGraphQL(QUERY)
       .then((data) => {
@@ -110,12 +111,13 @@ export default function Home() {
         );
         setFaqQuestions(data.faqQuestionCollection.items as QuestionSchema[]);
         setPosters(
-            data.eventPosterCollection.items
-            .sort((a: PosterSchema, b: PosterSchema) => {
+          data.eventPosterCollection.items.sort(
+            (a: PosterSchema, b: PosterSchema) => {
               const dateA = new Date(a.date).getTime();
               const dateB = new Date(b.date).getTime();
               return dateA - dateB;
-            })
+            }
+          )
         );
       })
       .catch((error) => {
@@ -127,13 +129,10 @@ export default function Home() {
   const faqRef = useRef<HTMLDivElement | null>(null);
   const isFaqInView = useInView(faqRef, { once: true });
 
-  
-
-  
-  const filterByDate = (future: boolean) =>{
+  const filterByDate = (future: boolean) => {
     const now = new Date();
-  
-    const filtered = eventPosters.filter(item => {
+
+    const filtered = eventPosters.filter((item) => {
       const itemDate = new Date(item.date);
       if (future) {
         return itemDate > now;
@@ -142,7 +141,7 @@ export default function Home() {
       }
     });
     return filtered;
-  }
+  };
 
   const rows = Math.ceil(filterByDate(showingFuturePosters).length / 5);
 
@@ -507,8 +506,15 @@ export default function Home() {
       </motion.div>
       <div className="flex flex-col items-center">
         <div className="flex justify-center pt-20 pb-12 gap-8 w-10/12 *:flex *:flex-col *:items-center *:px-20 *:py-8 *:backdrop-blur-[1px] *:w-1/2 *:rounded-3xl *:border-2 *:border-solid ">
-          <button className={`min-h-full ${showingFuturePosters ? "border-[#4A4F8C] bg-slate-100" : "border-neutral-300 bg-slate-100/50 "} transition duration-200 ease-out`} onClick={() => setShowingFuturePosters(true)}>
-            <LuChartCandlestick/>
+          <button
+            className={`min-h-full ${
+              showingFuturePosters
+                ? "border-[#4A4F8C] bg-slate-100"
+                : "border-neutral-300 bg-slate-100/50 "
+            } transition duration-200 ease-out`}
+            onClick={() => setShowingFuturePosters(true)}
+          >
+            <LuChartCandlestick />
             <div className={`font-medium py-6 text-sm text-neutral-800`}>
               Coming Events
             </div>
@@ -517,8 +523,15 @@ export default function Home() {
               put. Here is a list of our latest events at Carleton Blockchain
             </div>
           </button>
-          <button className={`min-h-full ${!showingFuturePosters ? "border-[#4A4F8C] bg-slate-100" : "border-neutral-300 bg-slate-100/50 "} transition duration-200 ease-out`}  onClick={() => setShowingFuturePosters(false)}>
-          <LuPiggyBank/>
+          <button
+            className={`min-h-full ${
+              !showingFuturePosters
+                ? "border-[#4A4F8C] bg-slate-100"
+                : "border-neutral-300 bg-slate-100/50 "
+            } transition duration-200 ease-out`}
+            onClick={() => setShowingFuturePosters(false)}
+          >
+            <LuPiggyBank />
             <div className=" font-medium py-6 text-sm text-neutral-800">
               Past Events
             </div>
@@ -529,17 +542,21 @@ export default function Home() {
           </button>
         </div>
         <div className="p-12 flex flex-col gap-10 bg-white border border-solid border-neutral-200 drop-shadow-lg w-fit rounded-xl">
-          {rows ? Array(rows)
-            .fill(1)
-            .map((_, iter) => (
-              <PosterGallery
-                posters={filterByDate(showingFuturePosters).slice(iter * eventPosters.length/rows, (iter + 1) * eventPosters.length/rows)}
-                key={iter}
-              />
-            )) : 
-            <div>
-              Nothing at the moment! Check back later for more events.  
-            </div>}
+          {rows ? (
+            Array(rows)
+              .fill(1)
+              .map((_, iter) => (
+                <PosterGallery
+                  posters={filterByDate(showingFuturePosters).slice(
+                    (iter * eventPosters.length) / rows,
+                    ((iter + 1) * eventPosters.length) / rows
+                  )}
+                  key={iter}
+                />
+              ))
+          ) : (
+            <div>Nothing at the moment! Check back later for more events.</div>
+          )}
         </div>
       </div>
 
