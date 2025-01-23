@@ -185,7 +185,7 @@ export default function Home() {
       </motion.main>
 
       <div className="flex flex-col items-center justify-center flex-1">
-        <div className="flex flex-col md:flex-row gap-6 px-4 w-full md:w-auto">
+        <div className="w-[80%] flex flex-col md:flex-row gap-6 px-4 w-full md:w-auto">
           <motion.a
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
