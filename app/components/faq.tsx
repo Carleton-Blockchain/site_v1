@@ -1,8 +1,13 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { motion } from "framer-motion";
-
+import { Document } from "@contentful/rich-text-types";
 interface FAQProps {
-  faq: any;
+  faq: {
+    question: string;
+    answer: {
+      json: Document;
+    };
+  };
   isOpen: boolean;
   onToggle: () => void;
 }

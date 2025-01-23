@@ -1,6 +1,6 @@
 "use client";
 import { FaLinkedin, FaInstagram, FaDiscord } from "react-icons/fa";
-
+import { Document } from "@contentful/rich-text-types";
 export const socialLinks = [
   {
     href: "https://www.linkedin.com/company/carleton-blockchain/",
@@ -46,7 +46,9 @@ export interface MetricSchema {
 
 export interface QuestionSchema {
   question: string;
-  answer: any;
+  answer: {
+    json: Document;
+  };
 }
 
 export interface TeamMemberSchema {
