@@ -518,10 +518,9 @@ export default function Home() {
             <div className={`font-medium py-6 text-sm text-neutral-800`}>
               Coming Events
             </div>
-            <div className=" font-light text-md text-neutral-600">
-              Blockchain is known for moving fast. Yappity yap yap idk what to
-              put. Here is a list of our latest events at Carleton Blockchain
-            </div>
+            {/* <div className=" font-light text-md text-neutral-600">
+              Blockchain is known for moving fast.
+            </div> */}
           </button>
           <button
             className={`min-h-full ${
@@ -535,10 +534,9 @@ export default function Home() {
             <div className=" font-medium py-6 text-sm text-neutral-800">
               Past Events
             </div>
-            <div className="font-light text-md text-neutral-600">
-              Blockchain is known for moving fast. Yappity yap yap idk what to
-              put. Here is a list of our past events at Carleton Blockchain
-            </div>
+            {/* <div className="font-light text-md text-neutral-600">
+              Blockchain is known for moving fast. 
+            </div> */}
           </button>
         </div>
         <div className="p-12 flex flex-col gap-10 bg-white border border-solid border-neutral-200 drop-shadow-lg w-fit rounded-xl">
