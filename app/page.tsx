@@ -3,6 +3,8 @@ import Image from "next/image";
 import { FaDiscord, FaLinkedin } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react";
 
+
+
 import {
   TeamMemberSchema,
   ImageSchema,
@@ -169,6 +171,7 @@ export default function Home() {
         />
 
         <div className="flex flex-col items-center space-y-2 text-center">
+      
           <h1 className="text-4xl md:text-7xl font-medium text-gray-800">
             Crypto <span className="text-[#4A4F8C]">Curious</span>?
           </h1>
