@@ -510,7 +510,7 @@ export default function Home() {
             className={`min-h-full ${
               showingFuturePosters
                 ? "border-[#4A4F8C] bg-slate-100"
-                : "border-neutral-300 bg-slate-100/50 "
+                : "border-neutral-300 bg-slate-100/50 hidden"
             } transition duration-200 ease-out`}
             onClick={() => setShowingFuturePosters(true)}
           >
@@ -526,7 +526,7 @@ export default function Home() {
             className={`min-h-full ${
               !showingFuturePosters
                 ? "border-[#4A4F8C] bg-slate-100"
-                : "border-neutral-300 bg-slate-100/50 "
+                : "border-neutral-300 bg-slate-100/50"
             } transition duration-200 ease-out`}
             onClick={() => setShowingFuturePosters(false)}
           >
@@ -539,22 +539,37 @@ export default function Home() {
             </div> */}
           </button>
         </div>
-        <div className="p-12 flex flex-col gap-10 bg-white border border-solid border-neutral-200 drop-shadow-lg w-fit rounded-xl">
-          {rows ? (
-            Array(rows)
-              .fill(1)
-              .map((_, iter) => (
-                <PosterGallery
-                  posters={filterByDate(showingFuturePosters).slice(
-                    (iter * eventPosters.length) / rows,
-                    ((iter + 1) * eventPosters.length) / rows
-                  )}
-                  key={iter}
-                />
-              ))
-          ) : (
-            <div>Nothing at the moment! Check back later for more events.</div>
-          )}
+        <div className="hidden lg:block">
+          <div className=" p-12 py-10 lg:p-20 flex flex-col gap-10 bg-white border border-solid border-neutral-200 drop-shadow-lg w-fit rounded-xl">
+            {rows ? (
+              Array(rows)
+                .fill(1)
+                .map((_, iter) => (
+                  <PosterGallery
+                    posters={filterByDate(showingFuturePosters).slice(
+                      (iter * eventPosters.length) / rows,
+                      ((iter + 1) * eventPosters.length) / rows
+                    )}
+                    key={iter}
+                  />
+                ))
+            ) : (
+              <div>
+                Nothing at the moment! Check back later for more events.
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="block lg:hidden">
+          <div className=" p-12 py-10 lg:p-20 flex flex-col gap-10 bg-white border border-solid border-neutral-200 drop-shadow-lg w-fit rounded-xl">
+            {rows ? (
+              <PosterGallery posters={filterByDate(showingFuturePosters)} />
+            ) : (
+              <div>
+                Nothing at the moment! Check back later for more events.
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
