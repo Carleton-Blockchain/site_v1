@@ -1,5 +1,16 @@
 import React from "react";
 import { PosterSchema } from "../common/Data";
+
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+
+
 interface GalleryProps {
   posters: PosterSchema[];
 }
@@ -28,12 +39,13 @@ function formatDate(date: Date): string {
 
 const PosterGallery = ({ posters }: GalleryProps) => {
   return (
+    <>
     <div
-      className={`group flex gap-10 h-[30vh] lg:h-[30vw] ${
+      className={`group hidden lg:flex gap-10 h-[60vh] lg:h-[30vw] ${
         posters.length === 1 ? " justify-center" : ""
       }`}
       style={{
-        width: `${
+        maxWidth: `${
           posters.length >= 5
             ? "60vw"
             : posters.length !== 1
@@ -60,7 +72,7 @@ const PosterGallery = ({ posters }: GalleryProps) => {
           <div className="h-full transition-all duration-100 ease-in-out">
             <img
               className="h-full object-cover w-full  rounded-2xl"
-              loading="lazy"
+              loading="eager"
               src={poster.image.url}
               alt={poster.image.alt || ""}
             />
@@ -68,6 +80,26 @@ const PosterGallery = ({ posters }: GalleryProps) => {
         </a>
       ))}
     </div>
+    <div className="block lg:hidden">
+    <Carousel className=" w-44">
+      <CarouselContent>
+        {Array.from({ length: 5 }).map((_, index) => (
+          <CarouselItem key={index}>
+            <div className="p-1">
+              <Card className="">
+                <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <span className="text-4xl font-semibold">{index + 1}</span>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+    </div>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
-import { socialLinks } from '@/app/common/Data';
-import SocialIcon from '@/app/common/SocialIcon';
+import { socialLinks } from "@/common/Data";
+import SocialIcon from "@/common/SocialIcon";
 import Image from 'next/image';
 import Link from 'next/link';
 
