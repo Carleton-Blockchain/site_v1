@@ -264,7 +264,7 @@ export default function Home() {
                 ease: [0.215, 0.61, 0.355, 1.0],
                 delay: 0.4,
               }}
-              className="text-5xl font-light text-[#1E3A2F] mb-6"
+              className="text-5xl font-light text-slate-900 mb-6"
             >
               Empowering students
               <br />
@@ -323,10 +323,10 @@ export default function Home() {
                   }}
                   className="flex items-baseline gap-4"
                 >
-                  <div className="text-4xl font-light text-[#1E3A2F]">
+                  <div className="text-4xl font-light text-slate-900">
                     {item.metricDataText}
                   </div>
-                  <div className="text-gray-600">{item.metricName}</div>
+                  <div className="text-slate-900">{item.metricName}</div>
                 </motion.div>
               ))}
             </div>
@@ -367,6 +367,137 @@ export default function Home() {
 
       <div className="h-32"></div>
 
+      <div className="flex flex-col items-center justify-center px-4 py-16 bg-white bg-gradient-to-br from-[#6B70B0]/40 via-[#9BA5D3]/40 to-[#E5F2FF]/50">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.7,
+            ease: [0.215, 0.61, 0.355, 1.0],
+            delay: 0.2,
+          }}
+          className="text-center max-w-3xl"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.7,
+              ease: [0.215, 0.61, 0.355, 1.0],
+              delay: 0.3,
+            }}
+            className="inline-block px-4 py-2 bg-[#4A4F8C] rounded-full mb-6"
+          >
+            <span className="text-white text-sm font-bold">LEARN WITH US</span>
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.7,
+              ease: [0.215, 0.61, 0.355, 1.0],
+              delay: 0.4,
+            }}
+            className="text-4xl md:text-5xl font-medium text-slate-900 mb-6"
+          >
+            Start Your Web3 Journey
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.7,
+              ease: [0.215, 0.61, 0.355, 1.0],
+              delay: 0.5,
+            }}
+            className="text-gray-600 mb-8"
+          >
+            View the content of our past and upcoming workshops where we dive
+            into everything web3.
+          </motion.p>
+          <motion.a
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.7,
+              ease: [0.215, 0.61, 0.355, 1.0],
+              delay: 0.6,
+            }}
+            href="https://docs.carletonblockchain.ca/introduction"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block h-12 px-8 rounded-md bg-[#4A4F8C] text-neutral-50 transition hover:bg-[#7B89B8] flex items-center justify-center"
+          >
+            <span className="flex items-center gap-2">
+              <span>Checkout our docs</span>
+            </span>
+          </motion.a>
+        </motion.div>
+      </div>
+
+      <div className="h-32"></div>
+
+      <div className="flex flex-col items-center">
+        <div className="flex justify-center pt-20 pb-12 gap-8 w-10/12 *:flex *:flex-col *:items-center *:px-20 *:py-8 *:backdrop-blur-[1px] *:w-1/2 *:rounded-3xl *:border-2 *:border-solid ">
+          <button
+            className={`min-h-full ${
+              showingFuturePosters
+                ? "border-[#4A4F8C] bg-slate-100"
+                : "border-neutral-300 bg-slate-100/50 "
+            } transition duration-200 ease-out`}
+            onClick={() => setShowingFuturePosters(true)}
+          >
+            <LuChartCandlestick />
+            <div className={`font-medium py-6 text-sm text-neutral-800`}>
+              Coming Events
+            </div>
+            {/* <div className=" font-light text-md text-neutral-600">
+              Blockchain is known for moving fast.
+            </div> */}
+          </button>
+          <button
+            className={`min-h-full ${
+              !showingFuturePosters
+                ? "border-[#4A4F8C] bg-slate-100"
+                : "border-neutral-300 bg-slate-100/50 "
+            } transition duration-200 ease-out`}
+            onClick={() => setShowingFuturePosters(false)}
+          >
+            <LuPiggyBank />
+            <div className=" font-medium py-6 text-sm text-neutral-800">
+              Past Events
+            </div>
+            {/* <div className="font-light text-md text-neutral-600">
+              Blockchain is known for moving fast. 
+            </div> */}
+          </button>
+        </div>
+        <div className="p-12 flex flex-col gap-10 bg-white border border-solid border-neutral-200 drop-shadow-lg w-fit rounded-xl">
+          {rows ? (
+            Array(rows)
+              .fill(1)
+              .map((_, iter) => (
+                <PosterGallery
+                  posters={filterByDate(showingFuturePosters).slice(
+                    (iter * eventPosters.length) / rows,
+                    ((iter + 1) * eventPosters.length) / rows
+                  )}
+                  key={iter}
+                />
+              ))
+          ) : (
+            <div>Nothing at the moment! Check back later for more events.</div>
+          )}
+        </div>
+      </div>
+
+      <div className="h-32"></div>
+
       <div className="flex flex-col items-center space-y-8 px-4 max-w-7xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -377,7 +508,7 @@ export default function Home() {
             ease: [0.215, 0.61, 0.355, 1.0],
             delay: 0.2,
           }}
-          className="text-4xl md:text-5xl font-light text-[#1E3A2F] text-center"
+          className="text-4xl md:text-5xl font-light text-slate-900 text-center"
         >
           Meet Our Team
         </motion.h2>
@@ -491,7 +622,7 @@ export default function Home() {
         }}
         className="flex flex-col items-center justify-center flex-1 px-6 md:px-20 space-y-8"
       >
-        <h2 className="text-3xl md:text-4xl font-normal text-gray-800">
+        <h2 className="text-3xl md:text-4xl font-normal text-slate-900">
           Frequently asked questions
         </h2>
         {faqQuestionsData &&
@@ -504,59 +635,6 @@ export default function Home() {
             />
           ))}
       </motion.div>
-      <div className="flex flex-col items-center">
-        <div className="flex justify-center pt-20 pb-12 gap-8 w-10/12 *:flex *:flex-col *:items-center *:px-20 *:py-8 *:backdrop-blur-[1px] *:w-1/2 *:rounded-3xl *:border-2 *:border-solid ">
-          <button
-            className={`min-h-full ${
-              showingFuturePosters
-                ? "border-[#4A4F8C] bg-slate-100"
-                : "border-neutral-300 bg-slate-100/50 "
-            } transition duration-200 ease-out`}
-            onClick={() => setShowingFuturePosters(true)}
-          >
-            <LuChartCandlestick />
-            <div className={`font-medium py-6 text-sm text-neutral-800`}>
-              Coming Events
-            </div>
-            {/* <div className=" font-light text-md text-neutral-600">
-              Blockchain is known for moving fast.
-            </div> */}
-          </button>
-          <button
-            className={`min-h-full ${
-              !showingFuturePosters
-                ? "border-[#4A4F8C] bg-slate-100"
-                : "border-neutral-300 bg-slate-100/50 "
-            } transition duration-200 ease-out`}
-            onClick={() => setShowingFuturePosters(false)}
-          >
-            <LuPiggyBank />
-            <div className=" font-medium py-6 text-sm text-neutral-800">
-              Past Events
-            </div>
-            {/* <div className="font-light text-md text-neutral-600">
-              Blockchain is known for moving fast. 
-            </div> */}
-          </button>
-        </div>
-        <div className="p-12 flex flex-col gap-10 bg-white border border-solid border-neutral-200 drop-shadow-lg w-fit rounded-xl">
-          {rows ? (
-            Array(rows)
-              .fill(1)
-              .map((_, iter) => (
-                <PosterGallery
-                  posters={filterByDate(showingFuturePosters).slice(
-                    (iter * eventPosters.length) / rows,
-                    ((iter + 1) * eventPosters.length) / rows
-                  )}
-                  key={iter}
-                />
-              ))
-          ) : (
-            <div>Nothing at the moment! Check back later for more events.</div>
-          )}
-        </div>
-      </div>
 
       <div className="flex justify-center mt-8 mb-8 pt-10">
         <button className="group relative">

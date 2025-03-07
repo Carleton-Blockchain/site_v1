@@ -15,7 +15,8 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Carleton Blockchain",
-  description: "Carleton's fastest growing student led blockchain organization!",
+  description:
+    "Carleton's fastest growing student led blockchain organization!",
   icons: [
     {
       rel: "icon",
@@ -26,7 +27,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Carleton Blockchain",
-    description: "Carleton's fastest growing student led blockchain organization!",
+    description:
+      "Carleton's fastest growing student led blockchain organization!",
     url: "https://www.carletonblockchain.com",
     type: "website",
     siteName: "Carleton Blockchain",
@@ -41,9 +43,10 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: "Carleton Blockchain",
-    description: "Carleton's fastest growing student led blockchain organization!",
+    description:
+      "Carleton's fastest growing student led blockchain organization!",
     images: ["https://www.carletonblockchain.com/cubanner.png"],
   },
 };
@@ -63,7 +66,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-black`}
       >
         {children}
       </body>
