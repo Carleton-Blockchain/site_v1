@@ -11,7 +11,7 @@ export default function OurMission() {
                     <br />
                     -
                     <br />
-                    Our mission at Carleton Blockchain is to educate, innovate, 
+                    Our mission at Ottawa Blockchain is to educate, innovate, 
                     and build a community of blockchain enthusiasts at Carleton University 
                     through workshops, hackathons, and industry connections.
                 </p>
