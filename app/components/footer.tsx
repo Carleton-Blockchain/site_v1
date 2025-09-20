@@ -15,7 +15,7 @@ export default function Footer() {
           >
             <Image src="/cublockchain1.ico" alt="Logo" width={40} height={40} />
             <span className="ml-3 text-xl font-bold text-gray-800">
-              Carleton Blockchain
+              Ottawa Blockchain
             </span>
           </Link>
           <div className="flex items-center mt-2">
@@ -64,7 +64,7 @@ export default function Footer() {
 
         {/* Trademark */}
         <div className="text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} Carleton Blockchain. All rights reserved.
+          © {new Date().getFullYear()} Ottawa Blockchain. All rights reserved.
         </div>
       </footer>
     </div>

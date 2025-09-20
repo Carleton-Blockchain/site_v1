@@ -176,7 +176,7 @@ export default function Home() {
 
         <div className="flex flex-col items-center space-y-2 text-center px-2 md:px-0">
           <h3 className="text-xs md:text-base font-medium text-gray-600">
-            At Carleton Blockchain, we&apos;re building the next wave of
+            At Ottawa Blockchain, we&apos;re building the next wave of
           </h3>
           <h3 className="text-xs md:text-base font-medium text-gray-600">
             crypto enthusiasts and blockchain developers!
@@ -282,7 +282,7 @@ export default function Home() {
               }}
               className="text-gray-600 max-w-2xl"
             >
-              Carleton Blockchain wasn&apos;t started in a classroom, but from a
+              Ottawa Blockchain wasn&apos;t started in a classroom, but from a
               shared vision. We, a group of passionate students, saw the need
               for a community that embraces blockchain innovation, fosters
               learning, and builds the future of Web3 together.
