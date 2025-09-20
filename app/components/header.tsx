@@ -29,7 +29,7 @@ export default function Header() {
                         />
                         <div className="ml-2 flex-col">
                             <span className="text-xl font-bold text-[#4A4F8C]">
-                                Carleton<br/>Blockchain
+                                Ottawa<br/>Blockchain
                             </span>
                         </div>
                     </Link>

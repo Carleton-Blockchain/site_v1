@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ottawa Blockchain",
     description:
-      "Carleton's fastest growing student led blockchain organization!",
+      "Ottawa's fastest growing student led blockchain organization!",
     url: "https://www.carletonblockchain.com",
     type: "website",
     siteName: "Ottawa Blockchain",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ottawa Blockchain",
     description:
-      "Carleton's fastest growing student led blockchain organization!",
+      "Ottawa's fastest growing student led blockchain organization!",
     images: ["https://www.carletonblockchain.com/cubanner.png"],
   },
 };
