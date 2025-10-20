@@ -10,7 +10,7 @@
     "reset": "git clean -fdX -e '!**/.env*'; pnpm i"
   },
   "engines": {
-    "node": ">=20.0.0 <=22.12.0"
+    "node": ">=20.0.0 <=22.20.0"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.0.1",
