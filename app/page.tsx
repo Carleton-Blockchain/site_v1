@@ -179,7 +179,7 @@ export default function Home() {
             At Carleton Blockchain, we&apos;re building the next wave of
           </h3>
           <h3 className="text-xs md:text-base font-medium text-gray-600">
-            crypto enthusiasts and blockchain developers!
+            crypto enthusiasts and blockchain developers. 
           </h3>
         </div>
       </motion.main>
